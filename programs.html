@@ -21,21 +21,34 @@
 </head>
 <body class="bg-white text-gray-900">
 
-    <!-- Navigasi (Sama seperti halaman lain) -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50 border-b-4 border-ngo-yellow">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-800 text-ngo-green tracking-tighter flex items-center">
-                <span class="bg-ngo-green text-white px-2 py-1 rounded mr-2">JP</span> CENDEK
-            </div>
-            <div class="hidden md:flex space-x-8 font-semibold">
-                <a href="index.html" class="hover:text-ngo-green transition">Laman Utama</a>
-                <a href="about.html" class="hover:text-ngo-green transition">Mengenai Kami</a>
-                <a href="programs.html" class="text-ngo-green border-b-2 border-ngo-green">Program</a>
-                <a href="resources.html" class="hover:text-ngo-green transition">Hab Ilmu</a>
-            </div>
-            <a href="contact.html" class="bg-ngo-yellow text-green-900 px-6 py-2 rounded-full font-bold hover:bg-yellow-400 transition">Sertai Kami</a>
+    <!-- คัดลอกไปทับส่วน nav เดิมในทุกหน้า -->
+<nav class="bg-white sticky top-0 z-50 border-b-4 border-ngo-yellow">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="text-2xl font-800 text-ngo-green tracking-tighter">
+            <span class="bg-ngo-green text-white px-2 py-1 rounded mr-2">JP</span> CENDEK
         </div>
-    </nav>
+        
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 font-semibold">
+            <a href="index.html" class="hover:text-ngo-green">Laman Utama</a>
+            <a href="about.html" class="hover:text-ngo-green">Mengenai Kami</a>
+            <a href="programs.html" class="hover:text-ngo-green">Program</a>
+            <a href="resources.html" class="hover:text-ngo-green">Hab Ilmu</a>
+        </div>
+
+        <!-- Mobile Menu Button (เพิ่มตรงนี้) -->
+        <button id="menu-btn" class="md:hidden text-ngo-green text-3xl">☰</button>
+    </div>
+
+    <!-- Mobile Menu Link (เพิ่มตรงนี้) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t p-6 space-y-4 font-semibold">
+        <a href="index.html" class="block text-ngo-green">Laman Utama</a>
+        <a href="about.html" class="block">Mengenai Kami</a>
+        <a href="programs.html" class="block">Program</a>
+        <a href="resources.html" class="block">Hab Ilmu</a>
+        <a href="contact.html" class="block bg-ngo-yellow text-center p-2 rounded-full">Sertai Kami</a>
+    </div>
+</nav>
 
     <!-- Header Program -->
     <header class="bg-ngo-green text-white py-20 text-center">
