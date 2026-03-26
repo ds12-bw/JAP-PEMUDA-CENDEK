@@ -21,18 +21,47 @@
         .border-ngo-yellow { border-color: #facc15; }
 
         /* 4. Hab Jaringan (Logo Slider Animation) */
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-250px * 5)); }
-        }
-        .slider-track {
-            display: flex;
-            width: calc(250px * 10);
-            animation: scroll 30s linear infinite;
-        }
-        .slide { width: 250px; flex-shrink: 0; display: flex; justify-content: center; align-items: center; padding: 0 40px; }
-        .slide img { max-width: 140px; filter: grayscale(100%); opacity: 0.4; transition: 0.4s; }
-        .slide img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    /* ปรับตัวเลข -300px ให้ตรงกับความกว้างช่องสไลด์ */
+    100% { transform: translateX(calc(-300px * 5)); } 
+}
+
+.slider-container {
+    overflow: hidden;
+    width: 100%;
+    background: white;
+    padding: 80px 0; /* เพิ่มพื้นที่ว่างด้านบนและด้านล่างให้ดูพรีเมียมขึ้น */
+}
+
+.slider-track {
+    display: flex;
+    /* 300px คูณด้วยจำนวนโลโก้ทั้งหมด (รวมตัวที่ก๊อปปี้ซ้ำ) เช่น 300 * 10 = 3000 */
+    width: calc(300px * 10); 
+    animation: scroll 25s linear infinite; /* ปรับ 25s ให้ช้าลงเล็กน้อยเพื่อให้ดูหรูหรา */
+}
+
+.slide {
+    width: 300px; /* เพิ่มความกว้างของช่องสไลด์ (ของเดิม 250px) */
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.slide img {
+    max-width: 220px; /* เพิ่มขนาดโลโก้ให้ใหญ่ขึ้น (ของเดิม 140px) */
+    max-height: 110px; /* ควบคุมความสูงให้เท่ากัน */
+    filter: none;      /* ลบ grayscale ออกเพื่อให้เป็น "สี" */
+    opacity: 1;        /* ปรับความเข้มเป็น 100% (เห็นสีชัดเจน) */
+    transition: transform 0.4s ease;
+    object-fit: contain;
+}
+
+.slide img:hover {
+    transform: scale(1.1); /* เมื่อเอาเมาส์วาง โลโก้จะขยายขึ้นเล็กน้อย */
+}
 
         /* Card Transitions */
         .hover-up { transition: all 0.3s ease; }
