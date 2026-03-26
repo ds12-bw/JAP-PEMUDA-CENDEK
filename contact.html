@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Kami | Jaringan Pemuda untuk Pengembangan Cendek</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
+        .bg-ngo-green { background-color: #166534; }
+        .text-ngo-green { color: #166534; }
+        .bg-ngo-yellow { background-color: #facc15; }
+        .text-ngo-yellow { color: #facc15; }
+        .border-ngo-yellow { border-color: #facc15; }
+        .form-input:focus { border-color: #166534; ring: 2px; ring-color: #facc15; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Navigasi -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50 border-b-4 border-ngo-yellow">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-800 text-ngo-green tracking-tighter flex items-center">
+                <span class="bg-ngo-green text-white px-2 py-1 rounded mr-2">JP</span> CENDEK
+            </div>
+            <div class="hidden md:flex space-x-8 font-semibold">
+                <a href="index.html" class="hover:text-ngo-green transition">Laman Utama</a>
+                <a href="about.html" class="hover:text-ngo-green transition">Mengenai Kami</a>
+                <a href="programs.html" class="hover:text-ngo-green transition">Program</a>
+                <a href="resources.html" class="hover:text-ngo-green transition">Hab Ilmu</a>
+            </div>
+            <a href="contact.html" class="bg-ngo-yellow text-green-900 px-6 py-2 rounded-full font-bold hover:bg-yellow-400 transition shadow-md">Sertai Kami</a>
+        </div>
+    </nav>
+
+    <!-- Header Hubungi Kami -->
+    <header class="bg-ngo-green text-white py-20 text-center">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl font-800 mb-4">Hubungi Kami</h1>
+            <p class="text-xl text-green-100 max-w-2xl mx-auto">Kami sentiasa bersedia untuk mendengar idea, kolaborasi, dan soalan anda.</p>
+        </div>
+    </header>
+
+    <!-- Contact Content -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <!-- Info Hubungan (Contact Info) -->
+                <div>
+                    <h2 class="text-3xl font-bold text-ngo-green mb-8">Mari Berhubung</h2>
+                    <p class="text-gray-600 mb-10 leading-relaxed">Sama ada anda ingin menjadi ahli, rakan strategik, atau menyumbang kepada pembangunan intelektual belia, pasukan kami sedia membantu.</p>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="bg-ngo-yellow p-3 rounded-lg mr-4 text-green-900">
+                                📧
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-ngo-green">Emel Rasmi</h4>
+                                <p class="text-gray-600">info@cendeknetwork.org</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-ngo-yellow p-3 rounded-lg mr-4 text-green-900">
+                                📍
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-ngo-green">Pejabat Operasi</h4>
+                                <p class="text-gray-600">Kuala Lumpur / Jakarta / Global Office<br>(Sila buat temujanji terlebih dahulu)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-ngo-yellow p-3 rounded-lg mr-4 text-green-900">
+                                📱
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-ngo-green">Media Sosial</h4>
+                                <p class="text-gray-600">Ikuti kami di @JPCendek untuk kemas kini harian.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Borang Hubungan (Contact Form) -->
+                <div class="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-gray-100">
+                    <form action="#" method="POST">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Nama Penuh</label>
+                                <input type="text" placeholder="Nama anda" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-ngo-green transition">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Alamat Emel</label>
+                                <input type="email" placeholder="emel@contoh.com" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-ngo-green transition">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Subjek</label>
+                            <select class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-ngo-green transition bg-white">
+                                <option>Keahlian Belia</option>
+                                <option>Kolaborasi Strategik</option>
+                                <option>Sumbangan & Dana</option>
+                                <option>Lain-lain</option>
+                            </select>
+                        </div>
+                        <div class="mb-8">
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Mesej Anda</label>
+                            <textarea rows="5" placeholder="Bagaimana kami boleh membantu anda?" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-ngo-green transition"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-ngo-green text-white py-4 rounded-xl font-bold text-lg hover:bg-green-700 transition shadow-lg flex justify-center items-center">
+                            Hantar Mesej <span class="ml-2">🚀</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t">
+        <div class="container mx-auto px-6 text-center">
+            <div class="text-2xl font-800 text-ngo-green mb-2">JP CENDEK</div>
+            <p class="text-gray-400 text-xs">&copy; 2024 Jaringan Pemuda untuk Pengembangan Cendek. Membina Jambatan Intelektual Nusantara.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
