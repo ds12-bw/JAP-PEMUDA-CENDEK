@@ -74,13 +74,20 @@
     <nav class="bg-white sticky top-0 z-[100] border-b-4 border-ngo-yellow shadow-md">
         <div class="container mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
             <!-- Logo JP CENDEK -->
-            <div class="flex items-center space-x-3">
-                <div class="<img src="images/jap.jpg w-12 h-12 rounded-lg flex items-center justify-center text-white font-black text-xl shadow-lg rotate-2">JP</div>
-                <div class="flex flex-col">
-                    <span class="text-xl md:text-2xl font-900 text-ngo-green leading-none tracking-tighter uppercase">CENDEK</span>
-                    <span class="text-[9px] font-bold text-ngo-yellow uppercase tracking-widest bg-ngo-green px-1 mt-1">Jaringan Pemuda</span>
-                </div>
-            </div>
+            <!-- Logo JP CENDEK (เวอร์ชันไฟล์รูปภาพ) -->
+<a href="index.html" class="flex items-center group">
+    <!-- ปรับความสูง h-12 (มือถือ) และ md:h-16 (คอมพิวเตอร์) ตามความเหมาะสมของโลโก้คุณ -->
+    <img src="images/่jap.png" 
+         alt="Logo JP CENDEK" 
+         class="h-12 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+    
+    <!-- ถ้าโลโก้มีแต่รูปสัญลักษณ์ (Symbol) และต้องการคงชื่อข้อความไว้ด้านข้าง ให้คงส่วนนี้ไว้ -->
+    <!-- แต่ถ้าโลโก้มีชื่อในตัวอยู่แล้ว ให้ลบ div ด้านล่างนี้ออกได้เลยครับ -->
+    <div class="hidden sm:flex flex-col ml-3">
+        <span class="text-xl md:text-2xl font-900 text-ngo-green leading-none tracking-tighter uppercase">CENDEK</span>
+        <span class="text-[9px] font-bold text-ngo-yellow uppercase tracking-widest bg-ngo-green px-1 mt-1">Jaringan Pemuda</span>
+    </div>
+</a>
 
             <!-- Menu Utama -->
             <div class="hidden lg:flex space-x-8 text-[11px] font-800 uppercase tracking-widest text-gray-500">
