@@ -3,244 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jaringan Pemuda untuk Pengembangan Cendek | JP CENDEK</title>
+    <title>Jaringan Pemuda untuk Pengembangan Cendek | Membina Intelektual Belia</title>
     
-    <!-- Fonts & Frameworks -->
+    <!-- Framework & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
     
     <style>
-        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; }
         h1, h2, h3, .font-heading { font-family: 'Montserrat', sans-serif; }
-
-        /* สีประจำองค์กร */
+        
+        /* สไตล์สีองค์กร */
         .bg-ngo-green { background-color: #166534; }
         .bg-ngo-yellow { background-color: #facc15; }
         .text-ngo-green { color: #166534; }
         .border-ngo-yellow { border-color: #facc15; }
 
-        /* เอฟเฟกต์พิเศษสำหรับ Hero & Overlay */
-        .hero-pattern {
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-
-        /* Logo Slider Animation */
+        /* ระบบ Logo Slider (Jaringanเลื่อน) */
         @keyframes scroll {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-250px * 5)); }
+            100% { transform: translateX(calc(-200px * 5)); }
         }
         .slider-track {
             display: flex;
-            width: calc(250px * 10);
-            animation: scroll 30s linear infinite;
+            width: calc(200px * 10);
+            animation: scroll 25s linear infinite;
         }
-        .slide { width: 250px; flex-shrink: 0; display: flex; justify-content: center; align-items: center; }
-        .slide img { max-width: 140px; filter: grayscale(100%); opacity: 0.4; transition: 0.4s; }
+        .slide { width: 200px; padding: 0 40px; flex-shrink: 0; }
+        .slide img { filter: grayscale(100%); opacity: 0.5; transition: 0.3s; }
         .slide img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
 
-        /* Smooth Transition */
-        .impact-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .impact-card:hover { transform: translateY(-10px); }
+        /* ปรับแต่งความละเอียดของ Impact Card */
+        .impact-card { transition: all 0.3s ease; }
+        .impact-card:hover { transform: translateY(-5px); background-color: #fefce8; }
     </style>
 </head>
+<body class="bg-gray-50 text-gray-900">
 
-<body class="bg-white text-gray-900">
-
-    <!-- 1. NAVIGATION (ABIM STYLE) -->
-    <nav class="bg-white sticky top-0 z-[100] border-b-4 border-ngo-yellow shadow-sm">
+    <!-- 1. TOP NAVIGATION (ABIM STYLE) -->
+    <nav class="bg-white sticky top-0 z-[100] border-b-4 border-ngo-yellow shadow-md">
         <div class="container mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
-            <!-- Logo Section -->
+            <!-- Logo -->
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 md:w-12 md:h-12 bg-ngo-green rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg rotate-3">JP</div>
+                <div class="w-12 h-12 bg-ngo-green rounded-lg flex items-center justify-center text-white font-black text-xl shadow-inner">JP</div>
                 <div class="flex flex-col">
-                    <span class="text-xl md:text-2xl font-900 text-ngo-green leading-none tracking-tighter">CENDEK</span>
-                    <span class="text-[8px] md:text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">Intellectual Network</span>
+                    <span class="text-xl md:text-2xl font-900 text-ngo-green leading-none tracking-tighter uppercase">CENDEK</span>
+                    <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Rangkaian Intelektual</span>
                 </div>
             </div>
 
-            <!-- Desktop Links -->
-            <div class="hidden lg:flex space-x-8 font-bold text-[11px] uppercase tracking-widest">
-                <a href="index.html" class="text-ngo-green border-b-2 border-ngo-green pb-1">Laman Utama</a>
-                <a href="about.html" class="text-gray-500 hover:text-ngo-green transition">Mengenai Kami</a>
-                <a href="programs.html" class="text-gray-500 hover:text-ngo-green transition">Program</a>
-                <a href="resources.html" class="text-gray-500 hover:text-ngo-green transition">Hab Ilmu</a>
+            <!-- Main Menu (Desktop) -->
+            <div class="hidden lg:flex space-x-8 text-[11px] font-800 uppercase tracking-widest text-gray-500">
+                <a href="index.html" class="text-ngo-green border-b-2 border-ngo-green pb-1">Utama</a>
+                <a href="about.html" class="hover:text-ngo-green transition">Mengenai Kami</a>
+                <a href="programs.html" class="hover:text-ngo-green transition">Program</a>
+                <a href="resources.html" class="hover:text-ngo-green transition">Hab Ilmu</a>
+                <a href="contact.html" class="hover:text-ngo-green transition">Hubungi</a>
             </div>
 
-            <!-- CTA Buttons -->
-            <div class="hidden md:flex items-center space-x-3">
-                <a href="#" class="bg-ngo-green text-white px-5 py-2.5 rounded-lg font-bold text-[10px] uppercase tracking-wider hover:bg-green-800 transition shadow-md">Jom Jadi Ahli</a>
-                <a href="#" class="bg-ngo-yellow text-green-900 px-5 py-2.5 rounded-lg font-bold text-[10px] uppercase tracking-wider hover:bg-yellow-400 transition shadow-md">Sumbang & Infaq</a>
+            <!-- Dual-CTA Buttons -->
+            <div class="hidden md:flex items-center space-x-2">
+                <a href="#" class="bg-ngo-green text-white px-5 py-2.5 rounded font-bold text-[10px] uppercase tracking-wider hover:bg-green-800 transition">Jom Jadi Ahli</a>
+                <a href="#" class="bg-ngo-yellow text-green-900 px-5 py-2.5 rounded font-bold text-[10px] uppercase tracking-wider hover:bg-yellow-400 transition">Sumbang & Infaq</a>
             </div>
 
-            <!-- Mobile Toggle -->
+            <!-- Mobile Menu Toggle -->
             <button id="menu-btn" class="lg:hidden text-ngo-green text-3xl">☰</button>
-        </div>
-        
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t p-6 flex flex-col space-y-4 font-bold text-sm uppercase">
-            <a href="index.html" class="text-ngo-green">Laman Utama</a>
-            <a href="about.html">Mengenai Kami</a>
-            <a href="programs.html">Program</a>
-            <a href="resources.html">Hab Ilmu</a>
-            <div class="flex flex-col gap-2 pt-4">
-                <a href="#" class="bg-ngo-green text-white p-3 rounded-lg text-center">Jom Jadi Ahli</a>
-                <a href="#" class="bg-ngo-yellow text-green-900 p-3 rounded-lg text-center">Sumbang & Infaq</a>
-            </div>
         </div>
     </nav>
 
     <!-- 2. HERO SECTION -->
-    <header class="bg-ngo-green text-white pt-24 pb-40 relative overflow-hidden hero-pattern">
-        <!-- Decoration Blobs -->
-        <div class="absolute top-0 right-0 w-96 h-96 bg-ngo-yellow opacity-10 rounded-full blur-3xl -mr-48 -mt-48"></div>
-        <div class="absolute bottom-0 left-0 w-64 h-64 bg-white opacity-5 rounded-full blur-2xl -ml-32 -mb-32"></div>
-
+    <header class="bg-ngo-green text-white pt-24 pb-48 relative overflow-hidden">
+        <!-- Abstract Decoration -->
+        <div class="absolute top-0 right-0 w-80 h-80 bg-ngo-yellow opacity-10 rounded-full blur-3xl -mr-40 -mt-40"></div>
+        
         <div class="container mx-auto px-6 relative z-10 text-center">
-            <h1 class="text-4xl md:text-7xl font-900 mb-6 leading-[1.1] animate-fade-in">
+            <h1 class="text-4xl md:text-7xl font-900 mb-6 leading-tight">
                 Memperkasakan Belia melalui <br>
                 <span class="text-ngo-yellow">Kecemerlangan Intelektual</span>
             </h1>
-            <p class="text-lg md:text-xl mb-12 text-green-50 max-w-3xl mx-auto font-medium opacity-90 leading-relaxed">
-                Membina masa depan yang dipacu oleh ilmu, integriti, dan impak sosial yang nyata untuk komuniti nasional dan global.
+            <p class="text-lg md:text-xl mb-12 text-green-50 max-w-3xl mx-auto opacity-90">
+                Membangunkan potensi pemimpin masa depan melalui wadah ilmu, integriti dan kepimpinan berimpak tinggi.
             </p>
             <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="#impact" class="bg-ngo-yellow text-green-900 px-10 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">Impak Kami</a>
-                <a href="programs.html" class="bg-white/10 backdrop-blur-md border-2 border-white/30 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-ngo-green transition-all duration-300">Terokai Program</a>
+                <a href="#impact" class="bg-ngo-yellow text-green-900 px-10 py-4 rounded-xl font-bold text-lg hover:shadow-xl transition transform hover:-translate-y-1">Impak Kami</a>
+                <a href="programs.html" class="border-2 border-white text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-ngo-green transition">Terokai Program</a>
             </div>
         </div>
     </header>
 
-    <!-- 3. IMPACT CARDS (OVERLAY STYLE) -->
-    <section id="impact" class="relative z-20 -mt-20">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.15)] flex flex-wrap lg:flex-nowrap divide-y lg:divide-y-0 lg:divide-x border border-gray-100 overflow-hidden">
+    <!-- 3. IMPACT BOARD (5 กล่องขาวแบบ ABIM) -->
+    <section id="impact" class="relative z-20 -mt-24">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex flex-wrap lg:flex-nowrap divide-y lg:divide-y-0 lg:divide-x border border-gray-100 overflow-hidden">
                 
-                <!-- Stat Item 1 -->
+                <!-- Stat 1: Cawangan -->
                 <div class="w-full lg:w-1/5 p-10 flex flex-col items-center impact-card">
-                    <div class="text-ngo-yellow mb-4 text-4xl">🏛️</div>
-                    <div class="text-4xl font-900 text-ngo-green mb-1 counter" data-target="132">0</div>
-                    <div class="text-[10px] font-800 text-gray-400 uppercase tracking-[0.2em] text-center">Cawangan Seluruh Negara</div>
+                    <div class="text-ngo-green mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-10V4m0 10V4m-4 18h4"></path></svg>
+                    </div>
+                    <div class="text-4xl font-900 text-ngo-green mb-2 counter" data-target="132">0</div>
+                    <div class="text-[10px] font-800 text-gray-400 uppercase tracking-widest text-center">Cawangan Seluruh Negara</div>
                 </div>
 
-                <!-- Stat Item 2 -->
+                <!-- Stat 2: Agensi -->
                 <div class="w-full lg:w-1/5 p-10 flex flex-col items-center impact-card">
-                    <div class="text-ngo-yellow mb-4 text-4xl">🔗</div>
-                    <div class="text-4xl font-900 text-ngo-green mb-1 counter" data-target="20">0</div>
-                    <div class="text-[10px] font-800 text-gray-400 uppercase tracking-[0.2em] text-center">Agensi Rangkaian</div>
+                    <div class="text-ngo-green mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <div class="text-4xl font-900 text-ngo-green mb-2 counter" data-target="20">0</div>
+                    <div class="text-[10px] font-800 text-gray-400 uppercase tracking-widest text-center">Agensi Rangkaian</div>
                 </div>
 
-                <!-- Stat Item 3 -->
+                <!-- Stat 3: Hab Ilmu -->
                 <div class="w-full lg:w-1/5 p-10 flex flex-col items-center impact-card">
-                    <div class="text-ngo-yellow mb-4 text-4xl">📚</div>
-                    <div class="text-4xl font-900 text-ngo-green mb-1 counter" data-target="320">0</div>
-                    <div class="text-[10px] font-800 text-gray-400 uppercase tracking-[0.2em] text-center">Hab Intelektual</div>
+                    <div class="text-ngo-green mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    </div>
+                    <div class="text-4xl font-900 text-ngo-green mb-2 counter" data-target="320">0</div>
+                    <div class="text-[10px] font-800 text-gray-400 uppercase tracking-widest text-center">Pusat Pembelajaran</div>
                 </div>
 
-                <!-- Stat Item 4 -->
+                <!-- Stat 4: Sukarelawan -->
                 <div class="w-full lg:w-1/5 p-10 flex flex-col items-center impact-card">
-                    <div class="text-ngo-yellow mb-4 text-4xl">🤝</div>
-                    <div class="text-4xl font-900 text-ngo-green mb-1 counter" data-target="3000">0</div>
-                    <div class="text-[10px] font-800 text-gray-400 uppercase tracking-[0.2em] text-center">Sukarelawan Aktif</div>
+                    <div class="text-ngo-green mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <div class="text-4xl font-900 text-ngo-green mb-2 counter" data-target="3000">0</div>
+                    <div class="text-[10px] font-800 text-gray-400 uppercase tracking-widest text-center">Sukarelawan Aktif</div>
                 </div>
 
-                <!-- Stat Item 5 -->
+                <!-- Stat 5: Ahli -->
                 <div class="w-full lg:w-1/5 p-10 flex flex-col items-center impact-card">
-                    <div class="text-ngo-yellow mb-4 text-4xl">🎓</div>
-                    <div class="text-4xl font-900 text-ngo-green mb-1 counter" data-target="42000">0</div>
-                    <div class="text-[10px] font-800 text-gray-400 uppercase tracking-[0.2em] text-center">Ahli Belia</div>
+                    <div class="text-ngo-green mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <div class="text-4xl font-900 text-ngo-green mb-2 counter" data-target="42000">0</div>
+                    <div class="text-[10px] font-800 text-gray-400 uppercase tracking-widest text-center">Keahlian Rasmi</div>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- 4. LOGO SLIDER (JARINGAN) -->
-    <div class="py-24 bg-white overflow-hidden">
+    <!-- 4. JARINGAN LOGO SLIDER (Seamless Scrolling) -->
+    <div class="py-20 bg-white">
         <div class="container mx-auto px-6 mb-12 text-center">
-            <h2 class="text-ngo-green font-900 text-2xl uppercase tracking-tighter">Rangkaian Strategik Kami</h2>
-            <div class="w-16 h-1.5 bg-ngo-yellow mx-auto mt-4 rounded-full"></div>
+            <h2 class="text-ngo-green font-900 text-2xl uppercase tracking-tight">Rakan Kerjasama Strategik</h2>
+            <div class="w-16 h-1 bg-ngo-yellow mx-auto mt-4 rounded-full"></div>
         </div>
         
-        <div class="slider-container relative">
+        <div class="overflow-hidden relative">
             <div class="slider-track">
-                <!-- Logos (Replace with your images) -->
-                <div class="slide"><img src="images/logo1.png" alt="Partner 1"></div>
-                <div class="slide"><img src="images/logo2.png" alt="Partner 2"></div>
-                <div class="slide"><img src="images/logo3.png" alt="Partner 3"></div>
-                <div class="slide"><img src="images/logo4.png" alt="Partner 4"></div>
-                <div class="slide"><img src="images/logo5.png" alt="Partner 5"></div>
-                <!-- Duplicate for infinite scroll -->
-                <div class="slide"><img src="images/logo1.png" alt="Partner 1"></div>
-                <div class="slide"><img src="images/logo2.png" alt="Partner 2"></div>
-                <div class="slide"><img src="images/logo3.png" alt="Partner 3"></div>
-                <div class="slide"><img src="images/logo4.png" alt="Partner 4"></div>
-                <div class="slide"><img src="images/logo5.png" alt="Partner 5"></div>
+                <!-- Logos (Gantikan dengan logo anda) -->
+                <div class="slide"><img src="images/logo1.png" alt="P1"></div>
+                <div class="slide"><img src="images/logo2.png" alt="P2"></div>
+                <div class="slide"><img src="images/logo3.png" alt="P3"></div>
+                <div class="slide"><img src="images/logo4.png" alt="P4"></div>
+                <div class="slide"><img src="images/logo5.png" alt="P5"></div>
+                <!-- Duplicate for loop -->
+                <div class="slide"><img src="images/logo1.png" alt="P1"></div>
+                <div class="slide"><img src="images/logo2.png" alt="P2"></div>
+                <div class="slide"><img src="images/logo3.png" alt="P3"></div>
+                <div class="slide"><img src="images/logo4.png" alt="P4"></div>
+                <div class="slide"><img src="images/logo5.png" alt="P5"></div>
             </div>
         </div>
     </div>
 
-    <!-- 5. INSPIRASI CENDEKIA (BLOG/NEWS) -->
-    <section class="py-24 bg-gray-50">
+    <!-- 5. INSPIRASI CENDEKIA (News Section) -->
+    <section class="py-24 bg-gray-50 border-t">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center mb-16">
-                <div class="text-center md:text-left">
+            <div class="flex justify-between items-end mb-16 text-center md:text-left">
+                <div>
                     <h2 class="text-4xl font-900 text-ngo-green tracking-tighter">Inspirasi Cendekia</h2>
-                    <p class="text-gray-500 font-medium mt-2">Khabar terkini dan pemikiran daripada saf kepimpinan belia.</p>
+                    <p class="text-gray-500 mt-2 font-medium">Lensa aktiviti และ pemikiran terkini belia.</p>
                 </div>
-                <a href="resources.html" class="mt-6 md:mt-0 font-bold text-ngo-green flex items-center group">
-                    Lihat Semua <span class="ml-2 group-hover:translate-x-2 transition-transform">→</span>
+                <a href="resources.html" class="hidden md:flex font-bold text-ngo-green hover:underline items-center">
+                    Lihat Arkib <span class="ml-2">→</span>
                 </a>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <!-- News Card 1 -->
-                <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 group border border-gray-100">
-                    <div class="h-64 bg-gray-200 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80" alt="News" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute top-6 left-6 bg-ngo-yellow text-green-900 text-[10px] font-900 px-4 py-1.5 rounded-full uppercase">Khabar</div>
+                <!-- Artikel 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-500 group">
+                    <div class="h-64 bg-gray-200 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="Blog" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-gray-800 mb-4 leading-snug group-hover:text-ngo-green transition-colors">Kepimpinan Belia di Kawasan Luar Bandar 2024</h3>
-                        <p class="text-gray-500 text-sm mb-6 leading-relaxed">Bagaimana pemimpin muda menggerakkan perubahan intelektual di serata Nusantara...</p>
-                        <a href="#" class="text-ngo-green font-bold text-sm flex items-center">Baca Selengkapnya <span class="ml-1">↗</span></a>
+                        <span class="text-ngo-green font-900 text-[10px] uppercase tracking-widest">Khabar Lapangan</span>
+                        <h3 class="text-xl font-bold mt-3 mb-4 leading-snug group-hover:text-ngo-green transition">Wadah Intelektual Belia 2024: Transformasi Masa Depan</h3>
+                        <a href="#" class="text-gray-400 font-bold text-sm hover:text-ngo-green">Baca Lanjut &rarr;</a>
                     </div>
                 </div>
-                <!-- Add more cards here -->
+                <!-- Tambah lagi artikel di sini -->
             </div>
         </div>
     </section>
 
-    <!-- 6. FOOTER -->
-    <footer class="bg-ngo-green text-white pt-20 pb-10">
+    <!-- 6. FOOTER (Professional NGO Style) -->
+    <footer class="bg-ngo-green text-white pt-24 pb-12">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-16">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-16 mb-20">
                 <div class="lg:col-span-2">
-                    <div class="flex items-center space-x-3 mb-6 text-ngo-yellow">
+                    <div class="flex items-center space-x-3 mb-8">
                         <div class="w-10 h-10 bg-ngo-yellow text-green-900 rounded-lg flex items-center justify-center font-black">JP</div>
                         <span class="text-2xl font-900 tracking-tighter uppercase">JP CENDEK</span>
                     </div>
-                    <p class="text-green-100/70 max-w-sm leading-relaxed font-medium">
-                        Membangunkan potensi intelektual belia untuk memacu perubahan positif di peringkat nasional dan global.
+                    <p class="text-green-100/70 max-w-sm leading-relaxed">
+                        Rangkaian penggerak belia yang komited dalam melahirkan generasi intelektual yang berintegriti และ berdaya saing.
                     </p>
                 </div>
                 <div>
-                    <h4 class="font-bold text-ngo-yellow uppercase tracking-widest text-xs mb-6">Pautan Pantas</h4>
-                    <ul class="space-y-3 text-sm font-medium text-green-50">
+                    <h4 class="font-bold text-ngo-yellow uppercase tracking-widest text-xs mb-8">Pautan Pantas</h4>
+                    <ul class="space-y-4 text-sm font-medium text-green-50">
                         <li><a href="about.html" class="hover:text-ngo-yellow transition">Mengenai Kami</a></li>
-                        <li><a href="programs.html" class="hover:text-ngo-yellow transition">Program & Aktiviti</a></li>
-                        <li><a href="resources.html" class="hover:text-ngo-yellow transition">Hab Ilmu (Resources)</a></li>
+                        <li><a href="programs.html" class="hover:text-ngo-yellow transition">Program & Projek</a></li>
+                        <li><a href="resources.html" class="hover:text-ngo-yellow transition">Hab Ilmu</a></li>
                         <li><a href="contact.html" class="hover:text-ngo-yellow transition">Hubungi Kami</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold text-ngo-yellow uppercase tracking-widest text-xs mb-6">Hubungi Kami</h4>
-                    <p class="text-sm text-green-50 mb-2">Emel: info@cendek.org</p>
-                    <p class="text-sm text-green-50">Kawasan: Nusantara & Global</p>
+                    <h4 class="font-bold text-ngo-yellow uppercase tracking-widest text-xs mb-8">Ibu Pejabat</h4>
+                    <p class="text-sm text-green-100 leading-relaxed">
+                        Pusat Aktiviti Belia Cendekia,<br>
+                        Kawasan Nusantara & Global.<br><br>
+                        Emel: info@jpcendek.org
+                    </p>
                 </div>
             </div>
-            <div class="border-t border-white/10 pt-10 text-center">
-                <p class="text-[10px] uppercase font-bold tracking-[0.3em] text-green-200/50">
+            <div class="border-t border-white/10 pt-12 text-center">
+                <p class="text-[10px] font-bold tracking-[0.4em] text-green-200/40 uppercase">
                     &copy; 2024 Jaringan Pemuda untuk Pengembangan Cendek. Hak Cipta Terpelihara.
                 </p>
             </div>
