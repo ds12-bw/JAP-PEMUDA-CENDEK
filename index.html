@@ -222,51 +222,12 @@
         </div>
     </section>
 
-    <!-- 4. HAB JARINGAN (Logo Slider) -->
-   /* --- ปรับปรุงส่วน Hab Jaringan (Logo Slider) --- */
-
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    /* ปรับตัวเลข -300px ให้ตรงกับความกว้างของ .slide ด้านล่าง */
-    100% { transform: translateX(calc(-300px * 5)); } 
-}
-
-.slider-container {
-    overflow: hidden;
-    width: 100%;
-    background: white;
-    padding: 60px 0; /* เพิ่มพื้นที่ว่างบน-ล่างให้โลโก้ดูไม่อึดอัด */
-}
-
-.slider-track {
-    display: flex;
-    /* ความกว้างรวม = ความกว้างสไลด์ * จำนวนโลโก้ทั้งหมด (รวมตัวที่ Clone) */
-    width: calc(300px * 10); 
-    animation: scroll 20s linear infinite; /* ปรับ 20s ให้เร็วหรือช้าตามชอบ (น้อยคือเร็ว) */
-}
-
-.slide {
-    width: 300px; /* เพิ่มความกว้างของแต่ละช่องจาก 250px เป็น 300px */
-    flex-shrink: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.slide img {
-    max-width: 200px; /* เพิ่มขนาดโลโก้จาก 140px เป็น 200px (ปรับเพิ่มลดได้ตรงนี้) */
-    max-height: 100px; /* จำกัดความสูงเพื่อความสวยงามสม่ำเสมอ */
-    filter: none;      /* ลบ grayscale ออกเพื่อให้เป็น "สี" */
-    opacity: 1;        /* ปรับความเข้มเป็น 100% (เห็นสีชัดเจน) */
-    transition: transform 0.3s ease;
-    object-fit: contain;
-}
-
-.slide img:hover {
-    transform: scale(1.15); /* เมื่อเอาเมาส์วาง โลโก้จะขยายขึ้นอีกเล็กน้อย */
-}
-        
+   <!-- 4. HAB JARINGAN (Logo Slider) -->
+    <div id="jaringan" class="py-24 bg-white border-b">
+        <div class="container mx-auto px-6 mb-12 text-center">
+            <h2 class="text-ngo-green font-900 text-2xl uppercase tracking-widest">Hab Jaringan Strategik</h2>
+            <div class="w-20 h-1.5 bg-ngo-yellow mx-auto mt-4 rounded-full"></div>
+        </div>
         <div class="slider-container overflow-hidden relative">
             <div class="slider-track">
                 <!-- Logos -->
