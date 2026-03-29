@@ -5,104 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mengenai Kami | JP CENDEK</title>
     
+    <!-- Framework & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
     
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
         h1, h2, h3, .font-heading { font-family: 'Montserrat', sans-serif; }
+        
         .bg-ngo-green { background-color: #166534; }
         .bg-ngo-yellow { background-color: #facc15; }
         .text-ngo-green { color: #166534; }
+        .text-ngo-yellow { color: #facc15; }
+        .border-ngo-yellow { border-color: #facc15; }
+
+        /* Animation & Hover Effects */
+        .vision-card { transition: all 0.5s ease; border-radius: 2.5rem; }
+        .vision-card:hover { background-color: #166534; color: white; transform: translateY(-10px); }
+        .vision-card:hover .icon-bg { background-color: #facc15; color: #166534; }
         
-        /* ลูกเล่นพิเศษสำหรับหน้า About */
-        .vision-card { transition: all 0.5s ease; border-radius: 3rem; }
-        .vision-card:hover { background-color: #166534; color: white; transform: scale(1.02); }
-        .vision-card:hover .icon-circle { background-color: #facc15; color: #166534; }
+        .image-layer { transition: all 0.5s ease; }
+        .image-layer:hover { transform: scale(1.03); }
     </style>
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-gray-50 text-gray-900">
 
-    <!-- 1. BAHAGIAN NAVIGASI (The Gateway) -->
+    <!-- 1. BAHAGIAN NAVIGASI (Same as index.html) -->
     <nav class="bg-white sticky top-0 z-[100] border-b-4 border-ngo-yellow shadow-md">
         <div class="container mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
-      
-            <!-- Logo JP CENDEK (เวอร์ชันไฟล์รูปภาพ) -->
-<a href="index.html" class="flex items-center group">
-    <!-- ปรับความสูง h-12 (มือถือ) และ md:h-16 (คอมพิวเตอร์) ตามความเหมาะสมของโลโก้คุณ -->
-    <img src="images/jap.png" 
-         alt="Logo JP CENDEK" 
-         class="h-14 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
-    
-    <!-- ถ้าโลโก้มีแต่รูปสัญลักษณ์ (Symbol) และต้องการคงชื่อข้อความไว้ด้านข้าง ให้คงส่วนนี้ไว้ -->
-    <!-- แต่ถ้าโลโก้มีชื่อในตัวอยู่แล้ว ให้ลบ div ด้านล่างนี้ออกได้เลยครับ -->
-    <div class="hidden sm:flex flex-col ml-3">
-        <span class="text-xl md:text-2xl font-900 text-ngo-green leading-none tracking-tighter uppercase">JAP</span>
-        <span class="text-[7px] font-bold text-ngo-yellow uppercase tracking-widest bg-ngo-green px-1 mt-1">Jaringan Pemuda untuk pengembangan cendek</span>
-    </div>
-</a>
-
-            <!-- Menu Utama -->
+            <a href="index.html" class="flex items-center group">
+                <img src="images/jap.png" alt="Logo JP CENDEK" class="h-14 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                <div class="hidden sm:flex flex-col ml-3">
+                    <span class="text-xl md:text-2xl font-900 text-ngo-green leading-none tracking-tighter uppercase">JAP</span>
+                    <span class="text-[7px] font-bold text-ngo-yellow uppercase tracking-widest bg-ngo-green px-1 mt-1">Jaringan Pemuda untuk pengembangan cendek</span>
+                </div>
+            </a>
             <div class="hidden lg:flex space-x-8 text-[11px] font-800 uppercase tracking-widest text-gray-500">
-                <a href="about.html" class="hover:text-ngo-green transition">Mengenai Kami</a>
+                <a href="index.html" class="hover:text-ngo-green transition">Laman Utama</a>
+                <a href="about.html" class="text-ngo-green border-b-2 border-ngo-green pb-1">Mengenai Kami</a>
                 <a href="programs.html" class="hover:text-ngo-green transition">Program</a>
                 <a href="resources.html" class="hover:text-ngo-green transition">Hab Ilmu</a>
-                <a href="#jaringan" class="hover:text-ngo-green transition">Jaringan</a>
             </div>
-
-            <!-- Dual-CTA (Conversion) -->
             <div class="hidden md:flex items-center space-x-2">
                 <a href="#" class="bg-ngo-green text-white px-5 py-2.5 rounded font-bold text-[10px] uppercase tracking-wider hover:bg-green-800 transition shadow-sm">Jom Jadi Ahli</a>
                 <a href="#" class="bg-ngo-yellow text-green-900 px-5 py-2.5 rounded font-bold text-[10px] uppercase tracking-wider hover:bg-yellow-400 transition shadow-sm">Infaq & Dana</a>
             </div>
-
             <button id="menu-btn" class="lg:hidden text-ngo-green text-3xl">☰</button>
         </div>
     </nav>
-    <!-- 2. HERO ABOUT (The Identity) -->
-    <header class="bg-ngo-green text-white py-32 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <img src="images/team-bg-faded.jpg" class="w-full h-full object-cover grayscale">
+
+    <!-- 2. HERO SECTION (Consistent Faded Style) -->
+    <header class="relative bg-ngo-green text-white pt-24 pb-40 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="images/team/himpuntadika.jpg" alt="Background" class="w-full h-full object-cover opacity-20 filter grayscale">
+            <div class="absolute inset-0 bg-gradient-to-b from-ngo-green/90 via-ngo-green/80 to-ngo-green/90"></div>
         </div>
         <div class="container mx-auto px-6 relative z-10 text-center">
-            <span class="text-ngo-yellow font-900 text-xs uppercase tracking-[0.5em] mb-4 block">Kenali Perjuangan Kami</span>
+            <span class="text-ngo-yellow font-900 text-xs uppercase tracking-[0.5em] mb-4 block animate-pulse">Kenali Perjuangan Kami</span>
             <h1 class="text-5xl md:text-7xl font-900 mb-6 leading-tight uppercase tracking-tighter">
                 Mencorak Generasi <br> <span class="text-ngo-yellow">Intelektual Madani</span>
             </h1>
             <p class="text-lg md:text-xl text-green-50 max-w-2xl mx-auto opacity-80 font-medium italic">
-                "Ilmu, Amal, dan Bakti sebagai tunjang utama dalam menggerakkan potensi pemuda ke arah kemajuan ummah."
+                "Membina masa depan yang dipacu oleh ilmu, integriti, dan bakti nyata untuk komuniti."
             </p>
         </div>
     </header>
 
-    <!-- 3. SEJARAH & VISI (The Story) -->
+    <!-- 3. SEJARAH & PENUBUHAN (Image Layering Style) -->
     <section class="py-24 bg-white">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                <div class="relative">
-                    <!-- Image Layering -->
-                    <div class="bg-ngo-yellow absolute inset-0 transform translate-x-6 translate-y-6 rounded-[3rem] -z-10"></div>
-                    <img src="images/team/sejarah-cendek.jpg" alt="Sejarah JP Cendek" class="rounded-[3rem] shadow-2xl w-full h-[500px] object-cover">
+                <div class="relative group">
+                    <!-- Yellow Frame Behind Image -->
+                    <div class="bg-ngo-yellow absolute inset-0 transform translate-x-6 translate-y-6 rounded-[3rem] -z-10 transition-transform group-hover:translate-x-4 group-hover:translate-y-4"></div>
+                    <div class="overflow-hidden rounded-[3rem] shadow-2xl">
+                        <img src="images/team/kemung.jpg" alt="History" class="image-layer w-full h-[500px] object-cover">
+                    </div>
                 </div>
                 <div class="text-left">
-                    <h2 class="text-4xl font-900 text-ngo-green mb-8 uppercase tracking-tighter">Sejarah & <span class="text-gray-300">Penubuhan</span></h2>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                        JP CENDEK bermula daripada sebuah gagasan murni sekumpulan anak muda intelektual yang menyedari kepentingan peranan belia dalam mencorak masa depan negara.
+                    <h2 class="text-4xl md:text-5xl font-900 text-ngo-green mb-8 uppercase tracking-tighter">Sejarah & <span class="text-gray-300">Penubuhan</span></h2>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6 font-medium">
+                        JP CENDEK (JAP) ditubuhkan sebagai sebuah wadah untuk menyatukan potensi intelektual belia dalam mendepani cabaran zaman. Kami percaya bahawa kekuatan ilmu adalah kunci kepada kemajuan masyarakat.
                     </p>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-8">
-                        Kami bermatlamat untuk menjadi wadah utama bagi pemuda dalam mengasah daya fikir kritis, integriti moral, dan semangat kesukarelawanan yang berimpak tinggi.
+                    <p class="text-gray-600 text-lg leading-relaxed mb-10 font-medium">
+                        Melalui pelbagai siri gerak kerja lapangan, kami bermatlamat untuk melahirkan pemimpin muda yang bukan sahaja bijak berfikir, malah cekap berbakti.
                     </p>
                     
-                    <!-- Visi & Misi Mini Cards -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
-                        <div class="bg-gray-50 p-6 rounded-3xl border-l-8 border-ngo-yellow shadow-sm">
-                            <h4 class="font-900 text-ngo-green uppercase text-xs tracking-widest mb-2">Visi Kami</h4>
-                            <p class="text-sm text-gray-500 font-medium leading-relaxed">Menjadi rangkaian pemuda intelektual terulung di Nusantara.</p>
+                    <!-- Visi & Misi Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-8 rounded-3xl border-l-8 border-ngo-yellow shadow-sm">
+                            <h4 class="font-900 text-ngo-green uppercase text-xs tracking-widest mb-3">Visi Kami</h4>
+                            <p class="text-sm text-gray-500 font-bold leading-relaxed">Menjadi pusat kecemerlangan intelektual belia yang terunggul di Nusantara.</p>
                         </div>
-                        <div class="bg-gray-50 p-6 rounded-3xl border-l-8 border-ngo-green shadow-sm">
-                            <h4 class="font-900 text-ngo-green uppercase text-xs tracking-widest mb-2">Misi Kami</h4>
-                            <p class="text-sm text-gray-500 font-medium leading-relaxed">Membangun potensi belia melalui ilmu, kepimpinan & khidmat.</p>
+                        <div class="bg-gray-50 p-8 rounded-3xl border-l-8 border-ngo-green shadow-sm">
+                            <h4 class="font-900 text-ngo-green uppercase text-xs tracking-widest mb-3">Misi Kami</h4>
+                            <p class="text-sm text-gray-500 font-bold leading-relaxed">Memperkasa potensi pemuda melalui pendidikan, kepimpinan, dan khidmat bakti.</p>
                         </div>
                     </div>
                 </div>
@@ -110,75 +107,88 @@
         </div>
     </section>
 
-    <!-- 4. TUNJANG PERJUANGAN (Core Values - Wow Design) -->
-    <section class="py-24 bg-gray-50 relative overflow-hidden">
+    <!-- 4. TUNJANG PERJUANGAN (Interactive Core Values) -->
+    <section class="py-24 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-20">
                 <h2 class="text-5xl font-900 text-ngo-green uppercase tracking-tighter mb-4">Tunjang <span class="text-ngo-yellow">Perjuangan</span></h2>
-                <p class="text-gray-500 font-medium">Tiga nilai teras yang menjadi nadi setiap gerak kerja kami.</p>
+                <p class="text-gray-500 font-bold uppercase tracking-widest text-xs">Nilai teras yang menjadi nadi JP CENDEK</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <!-- Value 1: Intelektualiti -->
-                <div class="vision-card bg-white p-12 text-center shadow-xl border border-gray-100 group">
-                    <div class="icon-circle w-20 h-20 bg-ngo-green text-ngo-yellow rounded-full flex items-center justify-center mx-auto mb-8 text-3xl transition-all duration-500 shadow-lg">🧠</div>
-                    <h3 class="text-2xl font-900 mb-4 uppercase tracking-widest">Intelektualiti</h3>
-                    <p class="text-sm leading-relaxed font-medium opacity-80">
-                        Membudayakan daya fikir yang kritis, berasaskan fakta, dan berlandaskan ilmu pengetahuan yang sahih.
-                    </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Value 1 -->
+                <div class="vision-card bg-white p-12 text-center shadow-lg border border-gray-100 group">
+                    <div class="icon-bg w-20 h-20 bg-gray-100 text-ngo-green rounded-full flex items-center justify-center mx-auto mb-8 text-3xl shadow-inner transition-colors duration-500">🧠</div>
+                    <h3 class="text-2xl font-900 mb-4 uppercase">Intelektualiti</h3>
+                    <p class="text-sm opacity-80 leading-relaxed font-medium">Melahirkan daya fikir kritis yang berlandaskan ilmu pengetahuan dan kebenaran fakta.</p>
                 </div>
-
-                <!-- Value 2: Integriti -->
-                <div class="vision-card bg-white p-12 text-center shadow-xl border border-gray-100 group">
-                    <div class="icon-circle w-20 h-20 bg-ngo-green text-ngo-yellow rounded-full flex items-center justify-center mx-auto mb-8 text-3xl transition-all duration-500 shadow-lg">🤝</div>
-                    <h3 class="text-2xl font-900 mb-4 uppercase tracking-widest">Integriti</h3>
-                    <p class="text-sm leading-relaxed font-medium opacity-80">
-                        Menegakkan nilai moral yang tinggi, amanah dalam setiap tanggungjawab, dan jujur dalam berorganisasi.
-                    </p>
+                <!-- Value 2 -->
+                <div class="vision-card bg-white p-12 text-center shadow-lg border border-gray-100 group">
+                    <div class="icon-bg w-20 h-20 bg-gray-100 text-ngo-green rounded-full flex items-center justify-center mx-auto mb-8 text-3xl shadow-inner transition-colors duration-500">🤝</div>
+                    <h3 class="text-2xl font-900 mb-4 uppercase">Integriti</h3>
+                    <p class="text-sm opacity-80 leading-relaxed font-medium">Memegang amanah dalam setiap gerak kerja dengan nilai moral dan akhlak yang tinggi.</p>
                 </div>
-
-                <!-- Value 3: Aktivisme -->
-                <div class="vision-card bg-white p-12 text-center shadow-xl border border-gray-100 group">
-                    <div class="icon-circle w-20 h-20 bg-ngo-green text-ngo-yellow rounded-full flex items-center justify-center mx-auto mb-8 text-3xl transition-all duration-500 shadow-lg">🔥</div>
-                    <h3 class="text-2xl font-900 mb-4 uppercase tracking-widest">Aktivisme</h3>
-                    <p class="text-sm leading-relaxed font-medium opacity-80">
-                        Menterjemahkan idea kepada tindakan nyata yang memberi manfaat langsung kepada masyarakat dan negara.
-                    </p>
+                <!-- Value 3 -->
+                <div class="vision-card bg-white p-12 text-center shadow-lg border border-gray-100 group">
+                    <div class="icon-bg w-20 h-20 bg-gray-100 text-ngo-green rounded-full flex items-center justify-center mx-auto mb-8 text-3xl shadow-inner transition-colors duration-500">🔥</div>
+                    <h3 class="text-2xl font-900 mb-4 uppercase">Aktivisme</h3>
+                    <p class="text-sm opacity-80 leading-relaxed font-medium">Menggerakkan perubahan nyata dalam masyarakat melalui khidmat bakti yang berterusan.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. SAF KEPIMPINAN (The Leadership) -->
+    <!-- 5. SAF KEPIMPINAN (Leadership Grid) -->
     <section class="py-24 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <span class="text-ngo-green font-900 text-xs uppercase tracking-[0.4em] mb-4 block">Saf Kepimpinan</span>
-            <h2 class="text-5xl font-900 text-ngo-green mb-16 tracking-tighter uppercase">Di Sebalik <span class="text-gray-300">JP Cendek</span></h2>
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-900 text-ngo-green uppercase tracking-tighter mb-4">Saf <span class="text-gray-300">Kepimpinan</span></h2>
+                <p class="text-gray-500 font-bold uppercase tracking-widest text-xs">Penggerak di sebalik tabir JP CENDEK</p>
+            </div>
             
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
-                <!-- Leader Card 1 -->
-                <div class="group">
-                    <div class="relative overflow-hidden rounded-[2.5rem] mb-6 h-80 shadow-lg">
-                        <img src="images/team/pimpinan-1.jpg" alt="Presiden" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-ngo-green to-transparent opacity-0 group-hover:opacity-60 transition-opacity"></div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+                <!-- Leader 1 -->
+                <div class="group text-center">
+                    <div class="relative overflow-hidden rounded-[2.5rem] mb-6 h-80 shadow-xl border-4 border-white">
+                        <img src="images/team/kuae1.png" alt="Presiden" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-700">
                     </div>
                     <h4 class="text-xl font-900 text-ngo-green uppercase tracking-tighter">Dr. Ahmad Cendekia</h4>
-                    <p class="text-ngo-yellow font-bold text-[10px] uppercase tracking-widest">Presiden</p>
+                    <p class="text-ngo-yellow font-bold text-[10px] uppercase tracking-widest bg-ngo-green inline-block px-2 py-1 mt-2">Presiden</p>
                 </div>
-                <!-- ... Repeat for 3 more leaders ... -->
+                <!-- Add more leaders here following the same structure -->
             </div>
         </div>
     </section>
 
-    <!-- 6. FOOTER (Consistent) -->
-    <footer class="bg-ngo-green text-white pt-20 pb-12">
-        <div class="container mx-auto px-6 text-center">
-            <div class="flex items-center justify-center space-x-3 mb-10">
-                <div class="w-10 h-10 bg-ngo-yellow text-green-900 rounded-lg flex items-center justify-center font-black">JP</div>
-                <span class="text-2xl font-900 tracking-tighter uppercase">JP CENDEK</span>
+    <!-- 6. FOOTER (Identical to index.html) -->
+    <footer class="bg-ngo-green text-white pt-24 pb-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-16 mb-20">
+                <div class="lg:col-span-2 text-center lg:text-left">
+                    <div class="flex items-center justify-center lg:justify-start space-x-3 mb-8">
+                        <div class="w-10 h-10 bg-ngo-yellow text-green-900 rounded-lg flex items-center justify-center font-black">JP</div>
+                        <span class="text-2xl font-900 tracking-tighter uppercase">JP CENDEK</span>
+                    </div>
+                    <p class="text-green-100/70 max-w-sm leading-relaxed mb-6 font-medium italic">
+                        "Membina Masa Depan dengan Ilmu"
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-ngo-yellow uppercase tracking-widest text-xs mb-8">Pautan Pantas</h4>
+                    <ul class="space-y-4 text-sm font-medium text-green-50">
+                        <li><a href="about.html" class="hover:underline">Mengenai Kami</a></li>
+                        <li><a href="programs.html" class="hover:underline">Program Kami</a></li>
+                        <li><a href="resources.html" class="hover:underline">Hab Ilmu</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-ngo-yellow uppercase tracking-widest text-xs mb-8">Hubungi</h4>
+                    <p class="text-sm text-green-100 leading-relaxed">Pejabat JP Cendekia,<br>Emel: info@jpcendek.org</p>
+                </div>
             </div>
-            <p class="text-green-100/50 text-xs tracking-[0.5em] font-bold uppercase mb-4">&copy; 2024 Jaringan Pemuda Cendek</p>
-            <p class="text-white font-medium italic">"Membina Masa Depan dengan Ilmu"</p>
+            <div class="border-t border-white/10 pt-12 text-center text-[10px] font-bold tracking-[0.4em] text-green-200/40 uppercase">
+                &copy; 2024 Jaringan Pemuda untuk Pengembangan Cendek. Hak Cipta Terpelihara.
+            </div>
         </div>
     </footer>
 
