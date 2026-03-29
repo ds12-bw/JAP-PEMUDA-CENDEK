@@ -280,66 +280,94 @@
         </div>
     </div>
 
-    <!-- 5. SOROTAN PROGRAM (The Action) -->
-    <section class="py-24 bg-gray-50">
+    <!-- 5. SOROTAN PROGRAM (เวอร์ชันสไลด์ด้านข้าง - Horizontal Scroll) -->
+    <section class="py-24 bg-gray-50 overflow-hidden">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-900 text-ngo-green uppercase tracking-tighter">Sorotan Program</h2>
-                <p class="text-gray-500 mt-2 font-medium">Inisiatif utama kami dalam membangunkan modal insan.</p>
+            <!-- หัวข้อ และคำแนะนำ -->
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 text-center md:text-left">
+                <div>
+                    <h2 class="text-4xl font-900 text-ngo-green uppercase tracking-tighter">Sorotan Program</h2>
+                    <p class="text-gray-500 mt-2 font-medium italic">Sila skrol ke tepi untuk melihat lebih banyak &rarr;</p>
+                </div>
+                <!-- ปุ่มลูกศรสำหรับ Desktop -->
+                <div class="hidden md:flex space-x-2">
+                    <button onclick="document.getElementById('program-slider').scrollBy({left: -400, behavior: 'smooth'})" class="w-12 h-12 rounded-full border-2 border-ngo-green text-ngo-green hover:bg-ngo-green hover:text-white transition flex items-center justify-center font-bold shadow-sm">❮</button>
+                    <button onclick="document.getElementById('program-slider').scrollBy({left: 400, behavior: 'smooth'})" class="w-12 h-12 rounded-full border-2 border-ngo-green text-ngo-green hover:bg-ngo-green hover:text-white transition flex items-center justify-center font-bold shadow-sm">❯</button>
+                </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- ส่วน Container ที่เลื่อนได้ข้าง -->
+            <div id="program-slider" class="flex overflow-x-auto space-x-6 no-scrollbar snap-x snap-mandatory pb-10">
+                
                 <!-- Program 1 -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover-up border border-gray-100 p-2">
-                    <div class="h-60 bg-gray-200 rounded-2xl mb-6 overflow-hidden">
-                        <img src="images/team/melayu raya 25.jpg" alt="Leadership" class="w-full h-full object-cover">
-                    </div>
-                    <div class="px-6 pb-8 text-center">
-                        <h3 class="text-xl font-bold text-ngo-green mb-3 uppercase">bersama melayu raya 2025</h3>
-                        <p class="text-gray-500 text-sm mb-6">Membentuk pemimpin muda berwibawa melalui latihan intensif dan bimbingan mentor.</p>
-                        <a href="#" class="text-ngo-green font-900 text-[11px] uppercase tracking-widest hover:text-ngo-yellow">Ketahui Lanjut →</a>
+                <div class="flex-none w-[85%] md:w-[45%] lg:w-[31%] snap-center">
+                    <div class="bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover-up border border-gray-100 p-3 h-full flex flex-col">
+                        <div class="h-60 bg-gray-200 rounded-[2rem] mb-6 overflow-hidden">
+                            <img src="images/team/melayu raya 25.jpg" alt="Melayu Raya" class="w-full h-full object-cover">
+                        </div>
+                        <div class="px-6 pb-8 text-center flex-grow">
+                            <h3 class="text-xl font-bold text-ngo-green mb-4 uppercase leading-tight">Bersama Melayu Raya 2025</h3>
+                            <p class="text-gray-500 text-sm mb-6 leading-relaxed">Membentuk pemimpin muda berwibawa melalui latihan intensif dan bimbingan mentor.</p>
+                        </div>
+                        <div class="text-center pb-4">
+                            <a href="#" class="text-ngo-green font-900 text-[11px] uppercase tracking-widest hover:text-ngo-yellow transition">Ketahui Lanjut →</a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Program 2 -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover-up border border-gray-100 p-2">
-                    <div class="h-60 bg-ngo-green flex items-center justify-center rounded-2xl mb-6">
-                        <img src="images/team/mesyuarat bersama para pemimpin.jpg" alt="Leadership" class="w-full h-full object-cover">
-                    </div>
-                    <div class="px-6 pb-8 text-center">
-                        <h3 class="text-xl font-bold text-ngo-green mb-3 uppercase">mesyuarat untuk persiapan progaram maulidurrasul 2025</h3>
-                        <p class="text-gray-500 text-sm mb-6">majlis mesyuarat bersama para pemimpim di seluruh dairah cendek untuk buat persiapan program maulidurrasul pada tahun 2025 yang di anjurkan oleh JAP ,dan bersama persatuan di setiap mukim.</p>
-                        <a href="#" class="text-ngo-green font-900 text-[11px] uppercase tracking-widest hover:text-ngo-yellow">Ketahui Lanjut →</a>
+                <div class="flex-none w-[85%] md:w-[45%] lg:w-[31%] snap-center">
+                    <div class="bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover-up border border-gray-100 p-3 h-full flex flex-col">
+                        <div class="h-60 bg-gray-200 rounded-[2rem] mb-6 overflow-hidden">
+                            <img src="images/team/mesyuarat bersama para pemimpin.jpg" alt="Mesyuarat" class="w-full h-full object-cover">
+                        </div>
+                        <div class="px-6 pb-8 text-center flex-grow">
+                            <h3 class="text-xl font-bold text-ngo-green mb-4 uppercase leading-tight">Mesyuarat Persiapan Maulidurrasul 2025</h3>
+                            <p class="text-gray-500 text-sm mb-6 leading-relaxed">Majlis mesyuarat bersama para pemimpin di seluruh daerah Cendek untuk buat persiapan program maulidurrasul 2025.</p>
+                        </div>
+                        <div class="text-center pb-4">
+                            <a href="#" class="text-ngo-green font-900 text-[11px] uppercase tracking-widest hover:text-ngo-yellow transition">Ketahui Lanjut →</a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Program 3 -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover-up border border-gray-100 p-2">
-                    <div class="h-60 bg-gray-200 rounded-2xl mb-6 overflow-hidden">
-                        <img src="images/team/maulidurrasul 2024.jpg" alt="Knowledge Tour" class="w-full h-full object-cover">
-                    </div>
-                    <div class="px-6 pb-8 text-center">
-                        <h3 class="text-xl font-bold text-ngo-green mb-3 uppercase">program maulidurrasul 2024</h3>
-                        <p class="text-gray-500 text-sm mb-6">majlis maulidurrasul 2024 , bertempat di masjid dusunnya, bersama juga dengan ahli kampong dan para pemimpin tempatan.</p>
-                        <a href="#" class="text-ngo-green font-900 text-[11px] uppercase tracking-widest hover:text-ngo-yellow">Ketahui Lanjut →</a>
+                <div class="flex-none w-[85%] md:w-[45%] lg:w-[31%] snap-center">
+                    <div class="bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover-up border border-gray-100 p-3 h-full flex flex-col">
+                        <div class="h-60 bg-gray-200 rounded-[2rem] mb-6 overflow-hidden">
+                            <img src="images/team/maulidurrasul 2024.jpg" alt="Maulidurrasul 2024" class="w-full h-full object-cover">
+                        </div>
+                        <div class="px-6 pb-8 text-center flex-grow">
+                            <h3 class="text-xl font-bold text-ngo-green mb-4 uppercase leading-tight">Program Maulidurrasul 2024</h3>
+                            <p class="text-gray-500 text-sm mb-6 leading-relaxed">Majlis maulidurrasul 2024 bertempat di Masjid Dusunnya, bersama dengan ahli kampung dan para pemimpin tempatan.</p>
+                        </div>
+                        <div class="text-center pb-4">
+                            <a href="#" class="text-ngo-green font-900 text-[11px] uppercase tracking-widest hover:text-ngo-yellow transition">Ketahui Lanjut →</a>
+                        </div>
                     </div>
                 </div>
 
-                 <!-- Program 4 -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover-up border border-gray-100 p-2">
-                    <div class="h-60 bg-gray-200 rounded-2xl mb-6 overflow-hidden">
-                        <img src="images/team/maulidurrasul 2024.jpg" alt="Knowledge Tour" class="w-full h-full object-cover">
-                    </div>
-                    <div class="px-6 pb-8 text-center">
-                        <h3 class="text-xl font-bold text-ngo-green mb-3 uppercase">program maulidurrasul 2024</h3>
-                        <p class="text-gray-500 text-sm mb-6">majlis maulidurrasul 2024 , bertempat di masjid dusunnya, bersama juga dengan ahli kampong dan para pemimpin tempatan.</p>
-                        <a href="#" class="text-ngo-green font-900 text-[11px] uppercase tracking-widest hover:text-ngo-yellow">Ketahui Lanjut →</a>
+                <!-- Program 4 -->
+                <div class="flex-none w-[85%] md:w-[45%] lg:w-[31%] snap-center">
+                    <div class="bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover-up border border-gray-100 p-3 h-full flex flex-col">
+                        <div class="h-60 bg-gray-200 rounded-[2rem] mb-6 overflow-hidden">
+                            <img src="images/team/maulidurrasul 2024.jpg" alt="Program 4" class="w-full h-full object-cover">
+                        </div>
+                        <div class="px-6 pb-8 text-center flex-grow">
+                            <h3 class="text-xl font-bold text-ngo-green mb-4 uppercase leading-tight">Aktiviti Tambahan Cendek</h3>
+                            <p class="text-gray-500 text-sm mb-6 leading-relaxed">Penerangan program tambahan yang dijalankan untuk memperkukuhkan jaringan komuniti cendekia.</p>
+                        </div>
+                        <div class="text-center pb-4">
+                            <a href="#" class="text-ngo-green font-900 text-[11px] uppercase tracking-widest hover:text-ngo-yellow transition">Ketahui Lanjut →</a>
+                        </div>
                     </div>
                 </div>
+
+                <!-- คุณสามารถก๊อปปี้ Program 5, 6 เพิ่มต่อจากนี้ได้เลยครับ -->
+
             </div>
         </div>
     </section>
-
     <!-- 6. INSPIRASI CENDEKIA (The Thought Leadership) -->
     <section class="py-24 bg-white">
         <div class="container mx-auto px-6">
