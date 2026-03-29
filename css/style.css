@@ -112,3 +112,34 @@ h1, h2, h3, .font-display {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
+/* ลูกเล่นการ์ดสไลด์ให้ว้าวกว่าเดิม */
+.program-card {
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.program-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 30px 60px -12px rgba(22, 101, 52, 0.15), 0 18px 36px -18px rgba(0, 0, 0, 0.2);
+}
+
+/* ตกแต่งแถบ Scrollbar แนวนอนให้ดูแพง */
+#program-slider::-webkit-scrollbar {
+    height: 4px;
+}
+#program-slider::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+#program-slider::-webkit-scrollbar-thumb {
+    background: #facc15; 
+    border-radius: 10px;
+}
+
+/* เอฟเฟกต์รูปภาพ */
+.zoom-img {
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.program-card:hover .zoom-img {
+    transform: scale(1.15);
+}
