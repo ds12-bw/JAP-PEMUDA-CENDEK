@@ -3,116 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Program Kami | Jaringan Pemuda untuk Pengembangan Cendek</title>
+    <title>Program & Projek | JP CENDEK</title>
+    
+    <!-- Framework & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        h1, h2, h3, .font-heading { font-family: 'Montserrat', sans-serif; }
+        
         .bg-ngo-green { background-color: #166534; }
-        .text-ngo-green { color: #166534; }
         .bg-ngo-yellow { background-color: #facc15; }
+        .text-ngo-green { color: #166534; }
         .text-ngo-yellow { color: #facc15; }
         .border-ngo-yellow { border-color: #facc15; }
-        .hover-card:hover { transform: translateY(-10px); transition: all 0.3s ease; }
-    </style>
-      <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
-</head>
-<body class="bg-white text-gray-900">
 
-    <!-- 1. BAHAGIAN NAVIGASI (The Gateway) -->
+        /* Wow Card Animation */
+        .program-card { transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); border-radius: 2.5rem; }
+        .program-card:hover { transform: translateY(-15px); box-shadow: 0 30px 60px -12px rgba(22, 101, 52, 0.15); }
+        .zoom-img { transition: transform 0.8s ease; }
+        .program-card:hover .zoom-img { transform: scale(1.1); }
+        
+        /* Filter Button Effect */
+        .filter-btn { transition: all 0.3s ease; }
+        .filter-btn.active { background-color: #166534; color: white; border-color: #166534; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- 1. BAHAGIAN NAVIGASI (Same as index.html) -->
     <nav class="bg-white sticky top-0 z-[100] border-b-4 border-ngo-yellow shadow-md">
         <div class="container mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
-      
-            <!-- Logo JP CENDEK (เวอร์ชันไฟล์รูปภาพ) -->
-<a href="index.html" class="flex items-center group">
-    <!-- ปรับความสูง h-12 (มือถือ) และ md:h-16 (คอมพิวเตอร์) ตามความเหมาะสมของโลโก้คุณ -->
-    <img src="images/jap.png" 
-         alt="Logo JP CENDEK" 
-         class="h-14 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
-    
-    <!-- ถ้าโลโก้มีแต่รูปสัญลักษณ์ (Symbol) และต้องการคงชื่อข้อความไว้ด้านข้าง ให้คงส่วนนี้ไว้ -->
-    <!-- แต่ถ้าโลโก้มีชื่อในตัวอยู่แล้ว ให้ลบ div ด้านล่างนี้ออกได้เลยครับ -->
-    <div class="hidden sm:flex flex-col ml-3">
-        <span class="text-xl md:text-2xl font-900 text-ngo-green leading-none tracking-tighter uppercase">JAP</span>
-        <span class="text-[7px] font-bold text-ngo-yellow uppercase tracking-widest bg-ngo-green px-1 mt-1">Jaringan Pemuda untuk pengembangan cendek</span>
-    </div>
-</a>
-
-            <!-- Menu Utama -->
+            <a href="index.html" class="flex items-center group">
+                <img src="images/jap.png" alt="Logo JP CENDEK" class="h-14 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                <div class="hidden sm:flex flex-col ml-3">
+                    <span class="text-xl md:text-2xl font-900 text-ngo-green leading-none tracking-tighter uppercase">JAP</span>
+                    <span class="text-[7px] font-bold text-ngo-yellow uppercase tracking-widest bg-ngo-green px-1 mt-1">Jaringan Pemuda untuk pengembangan cendek</span>
+                </div>
+            </a>
             <div class="hidden lg:flex space-x-8 text-[11px] font-800 uppercase tracking-widest text-gray-500">
+                <a href="index.html" class="hover:text-ngo-green transition">Laman Utama</a>
                 <a href="about.html" class="hover:text-ngo-green transition">Mengenai Kami</a>
-                <a href="programs.html" class="hover:text-ngo-green transition">Program</a>
+                <a href="programs.html" class="text-ngo-green border-b-2 border-ngo-green pb-1">Program</a>
                 <a href="resources.html" class="hover:text-ngo-green transition">Hab Ilmu</a>
-                <a href="#jaringan" class="hover:text-ngo-green transition">Jaringan</a>
             </div>
-
-            <!-- Dual-CTA (Conversion) -->
             <div class="hidden md:flex items-center space-x-2">
                 <a href="#" class="bg-ngo-green text-white px-5 py-2.5 rounded font-bold text-[10px] uppercase tracking-wider hover:bg-green-800 transition shadow-sm">Jom Jadi Ahli</a>
                 <a href="#" class="bg-ngo-yellow text-green-900 px-5 py-2.5 rounded font-bold text-[10px] uppercase tracking-wider hover:bg-yellow-400 transition shadow-sm">Infaq & Dana</a>
             </div>
-
             <button id="menu-btn" class="lg:hidden text-ngo-green text-3xl">☰</button>
         </div>
     </nav>
 
-    <!-- Header Program -->
-    <header class="bg-ngo-green text-white py-20 text-center">
-        <div class="container mx-auto px-6">
-            <h1 class="text-4xl md:text-5xl font-800 mb-4">Program & Inisiatif</h1>
-            <p class="text-xl text-green-100 max-w-2xl mx-auto">Inisiatif kami dirancang khas untuk melahirkan pemimpin masa depan yang berilmu dan berintegriti.</p>
+    <!-- 2. HERO SECTION (Faded Background Style) -->
+    <header class="relative bg-ngo-green text-white pt-24 pb-40 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="images/team/himpuntadika.jpg" alt="Background" class="w-full h-full object-cover opacity-20 filter grayscale">
+            <div class="absolute inset-0 bg-gradient-to-b from-ngo-green/90 via-ngo-green/80 to-ngo-green/90"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <span class="text-ngo-yellow font-900 text-xs uppercase tracking-[0.5em] mb-4 block">Inisiatif & Impak</span>
+            <h1 class="text-5xl md:text-7xl font-900 mb-6 leading-tight uppercase tracking-tighter">
+                Program & <span class="text-ngo-yellow">Aktiviti</span>
+            </h1>
+            <p class="text-lg md:text-xl text-green-50 max-w-2xl mx-auto opacity-80 font-medium italic leading-relaxed">
+                "Menggerakkan wacana intelektual และ khidmat bakti melalui siri program yang strategik และ mampan."
+            </p>
         </div>
     </header>
 
-    <!-- Kategori Program Section -->
-    <section class="py-20">
+    <!-- 3. CATEGORY FILTER (Professional Touch) -->
+    <section class="py-12 bg-white border-b">
+        <div class="container mx-auto px-6 flex flex-wrap justify-center gap-4">
+            <button class="filter-btn active px-8 py-2.5 rounded-full border-2 border-gray-200 font-bold text-xs uppercase tracking-widest">Semua</button>
+            <button class="filter-btn px-8 py-2.5 rounded-full border-2 border-gray-200 font-bold text-xs uppercase tracking-widest hover:border-ngo-green">Kepimpinan</button>
+            <button class="filter-btn px-8 py-2.5 rounded-full border-2 border-gray-200 font-bold text-xs uppercase tracking-widest hover:border-ngo-green">Penyelidikan</button>
+            <button class="filter-btn px-8 py-2.5 rounded-full border-2 border-gray-200 font-bold text-xs uppercase tracking-widest hover:border-ngo-green">Kerohanian</button>
+        </div>
+    </section>
+
+    <!-- 4. PROGRAM GRID (The Heart of Content) -->
+    <section class="py-24 bg-gray-50">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                 
-                <!-- Program 1: Kepimpinan -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover-card">
-                    <div class="h-56 bg-gray-200 relative">
-                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600&q=80" alt="Leadership" class="w-full h-full object-cover">
-                        <div class="absolute top-4 left-4 bg-ngo-yellow text-green-900 text-xs font-bold px-3 py-1 rounded-full shadow-md">KEPIMPINAN</div>
+                <!-- Program 1 -->
+                <div class="program-card bg-white p-4 border border-gray-100 shadow-sm flex flex-col h-full">
+                    <div class="h-64 rounded-[2rem] overflow-hidden mb-8 relative">
+                        <img src="images/team/melayu raya 25.jpg" alt="Program 1" class="zoom-img w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-ngo-yellow text-green-900 text-[10px] font-900 px-4 py-1.5 rounded-full uppercase tracking-widest">Kepimpinan</div>
                     </div>
-                    <div class="p-8">
-                        <h3 class="text-xl font-bold text-ngo-green mb-4">Akademi Pemimpin Cendekia</h3>
-                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                            Program intensif untuk belia bagi mengasah kemahiran kepimpinan berteraskan etika dan daya fikir kritikal.
-                        </p>
-                        <a href="#" class="text-ngo-green font-bold flex items-center hover:underline">Ketahui Lanjut <span class="ml-2">&rarr;</span></a>
+                    <div class="px-6 pb-6 flex-grow">
+                        <h3 class="text-2xl font-800 text-ngo-green mb-4 uppercase">Melayu Raya 2025</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-6">Membentuk pemimpin muda berwibawa melalui pendedahan khidmat komuniti secara meluas และ bimbingan mentor berwibawa.</p>
                     </div>
-                </div>
-
-                <!-- Program 2: Penyelidikan -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover-card">
-                    <div class="h-56 bg-gray-200 relative">
-                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80" alt="Research" class="w-full h-full object-cover">
-                        <div class="absolute top-4 left-4 bg-ngo-yellow text-green-900 text-xs font-bold px-3 py-1 rounded-full shadow-md">PENYELIDIKAN</div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-xl font-bold text-ngo-green mb-4">Geran Inovasi Muda</h3>
-                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                            Menyediakan dana dan bimbingan untuk projek penyelidikan yang memberikan impak kepada masyarakat setempat.
-                        </p>
-                        <a href="#" class="text-ngo-green font-bold flex items-center hover:underline">Ketahui Lanjut <span class="ml-2">&rarr;</span></a>
+                    <div class="px-6 pb-6 mt-auto">
+                        <a href="#" class="text-ngo-green font-900 text-[11px] uppercase tracking-widest border-b-2 border-ngo-yellow pb-1 hover:text-ngo-yellow transition">Ketahui Lanjut →</a>
                     </div>
                 </div>
 
-                <!-- Program 3: Komuniti -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover-card">
-                    <div class="h-56 bg-gray-200 relative">
-                        <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=600&q=80" alt="Community" class="w-full h-full object-cover">
-                        <div class="absolute top-4 left-4 bg-ngo-yellow text-green-900 text-xs font-bold px-3 py-1 rounded-full shadow-md">KOMUNITI</div>
+                <!-- Program 2 -->
+                <div class="program-card bg-white p-4 border border-gray-100 shadow-sm flex flex-col h-full">
+                    <div class="h-64 rounded-[2rem] overflow-hidden mb-8 relative">
+                        <img src="images/team/mesyuarat bersama para pemimpin.jpg" alt="Program 2" class="zoom-img w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-ngo-green text-white text-[10px] font-900 px-4 py-1.5 rounded-full uppercase tracking-widest">Strategik</div>
                     </div>
-                    <div class="p-8">
-                        <h3 class="text-xl font-bold text-ngo-green mb-4">Jelajah Intelektual Belia</h3>
-                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                            Program turun padang untuk berkongsi ilmu dan membina rangkaian kerjasama di seluruh pelusuk negara.
-                        </p>
-                        <a href="#" class="text-ngo-green font-bold flex items-center hover:underline">Ketahui Lanjut <span class="ml-2">&rarr;</span></a>
+                    <div class="px-6 pb-6 flex-grow">
+                        <h3 class="text-2xl font-800 text-ngo-green mb-4 uppercase">Persiapan Maulidurrasul</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-6">Penyelarasan bersama pimpinan daerah demi kejayaan sambutan hari kebesaran Islam yang dianjurkan oleh JP Cendek.</p>
+                    </div>
+                    <div class="px-6 pb-6 mt-auto">
+                        <a href="#" class="text-ngo-green font-900 text-[11px] uppercase tracking-widest border-b-2 border-ngo-yellow pb-1 hover:text-ngo-yellow transition">Ketahui Lanjut →</a>
+                    </div>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="program-card bg-white p-4 border border-gray-100 shadow-sm flex flex-col h-full">
+                    <div class="h-64 rounded-[2rem] overflow-hidden mb-8 relative">
+                        <img src="images/team/maulidurrasul 2024.jpg" alt="Program 3" class="zoom-img w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-ngo-yellow text-green-900 text-[10px] font-900 px-4 py-1.5 rounded-full uppercase tracking-widest">Kerohanian</div>
+                    </div>
+                    <div class="px-6 pb-6 flex-grow text-center">
+                        <h3 class="text-2xl font-800 text-ngo-green mb-4 uppercase">Maulidurrasul 2024</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-6">Gema selawat และ ukhuwah bersama ahli komuniti Masjid Dusunnya และ pimpinan setempat.</p>
+                    </div>
+                    <div class="px-6 pb-6 mt-auto text-center">
+                        <a href="#" class="text-ngo-green font-900 text-[11px] uppercase tracking-widest border-b-2 border-ngo-yellow pb-1 hover:text-ngo-yellow transition">Ketahui Lanjut →</a>
+                    </div>
+                </div>
+
+                <!-- Program 4: Future Placeholder -->
+                <div class="program-card bg-white p-4 border border-gray-100 shadow-sm flex flex-col h-full">
+                    <div class="h-64 rounded-[2rem] bg-gray-100 mb-8 flex items-center justify-center">
+                        <span class="text-5xl opacity-20 grayscale">🤝</span>
+                    </div>
+                    <div class="px-6 pb-6 flex-grow">
+                        <h3 class="text-2xl font-800 text-ngo-green mb-4 uppercase">Program Khidmah</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-6">Aktiviti berterusan memacu kebajikan และ pembangunan sosio-intelektual masyarakat setempat.</p>
+                    </div>
+                    <div class="px-6 pb-6 mt-auto">
+                        <a href="#" class="text-ngo-green font-900 text-[11px] uppercase tracking-widest border-b-2 border-ngo-yellow pb-1 hover:text-ngo-yellow transition">Ketahui Lanjut →</a>
                     </div>
                 </div>
 
@@ -120,68 +151,50 @@
         </div>
     </section>
 
-    <!-- Statistik Ringkas Section (Background Hijau) -->
-    <section class="bg-ngo-green py-16">
-        <div class="container mx-auto px-6">
-            <div class="text-center text-white mb-12">
-                <h2 class="text-3xl font-bold">Impak Program Kami</h2>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+    <!-- 5. IMPACT STATS (Reinforcing the Scale) -->
+    <section class="py-24 bg-ngo-green text-white relative overflow-hidden">
+        <div class="absolute right-0 bottom-0 opacity-10 transform translate-x-20 translate-y-20">
+            <img src="images/jap.png" class="w-96">
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
                 <div>
-                    <div class="text-4xl font-800 text-ngo-yellow mb-2">50+</div>
-                    <div class="text-sm font-medium uppercase tracking-widest">Bengkel Selesai</div>
+                    <div class="text-5xl font-900 text-ngo-yellow mb-2">50+</div>
+                    <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-green-200">Program Selesai</p>
                 </div>
                 <div>
-                    <div class="text-4xl font-800 text-ngo-yellow mb-2">2000+</div>
-                    <div class="text-sm font-medium uppercase tracking-widest">Peserta Terlibat</div>
+                    <div class="text-5xl font-900 text-ngo-yellow mb-2">12,000</div>
+                    <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-green-200">Peserta Terlibat</p>
                 </div>
                 <div>
-                    <div class="text-4xl font-800 text-ngo-yellow mb-2">30+</div>
-                    <div class="text-sm font-medium uppercase tracking-widest">Negeri/Daerah</div>
+                    <div class="text-5xl font-900 text-ngo-yellow mb-2">15</div>
+                    <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-green-200">Negeri/Wilayah</p>
                 </div>
                 <div>
-                    <div class="text-4xl font-800 text-ngo-yellow mb-2">100%</div>
-                    <div class="text-sm font-medium uppercase tracking-widest">Komitmen Sosial</div>
+                    <div class="text-5xl font-900 text-ngo-yellow mb-2">100%</div>
+                    <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-green-200">Komitmen Impak</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Singkat (Sesuai untuk Program) -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-3xl font-bold text-ngo-green text-center mb-12">Soalan Lazim (FAQ)</h2>
-            <div class="space-y-4">
-                <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-ngo-yellow">
-                    <h4 class="font-bold text-ngo-green">Siapa yang boleh menyertai program ini?</h4>
-                    <p class="text-gray-600 text-sm mt-2">Semua belia berumur 18-35 tahun yang mempunyai minat mendalam dalam pembangunan intelektual dan sosial.</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-ngo-yellow">
-                    <h4 class="font-bold text-ngo-green">Adakah program ini berbayar?</h4>
-                    <p class="text-gray-600 text-sm mt-2">Kebanyakan program kami adalah percuma atau mendapat subsidi penuh daripada rakan kongsi strategik kami.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-white border-t py-12">
+    <!-- 6. FOOTER (Consistent with index.html) -->
+    <footer class="bg-white pt-24 pb-12">
         <div class="container mx-auto px-6 text-center">
-            <div class="text-2xl font-800 text-ngo-green mb-4">JP CENDEK</div>
-            <div class="flex justify-center space-x-6 mb-8 text-gray-500 font-medium">
+            <div class="flex items-center justify-center space-x-3 mb-10">
+                <div class="w-10 h-10 bg-ngo-green text-white rounded-lg flex items-center justify-center font-black">JP</div>
+                <span class="text-2xl font-900 tracking-tighter text-ngo-green uppercase">JP CENDEK</span>
+            </div>
+            <div class="flex justify-center space-x-8 mb-10 text-[10px] font-bold uppercase tracking-widest text-gray-400">
                 <a href="#" class="hover:text-ngo-green transition">Facebook</a>
                 <a href="#" class="hover:text-ngo-green transition">Instagram</a>
-                <a href="#" class="hover:text-ngo-green transition">LinkedIn</a>
+                <a href="#" class="hover:text-ngo-green transition">Twitter</a>
             </div>
-            <p class="text-gray-400 text-xs">&copy; 2024 Jaringan Pemuda untuk Pengembangan Cendek. Berusaha untuk masa depan intelektual.</p>
+            <p class="text-gray-400 text-[10px] font-bold tracking-[0.4em] uppercase">
+                &copy; 2024 Jaringan Pemuda untuk Pengembangan Cendek.
+            </p>
         </div>
     </footer>
-    
-    <div class="p-8 bg-green-50 border-l-8 border-ngo-yellow rounded-xl">
-    <!-- ใส่ class="counter" และระบุตัวเลขเป้าหมายใน data-target -->
-    <div class="text-4xl font-bold text-ngo-green mb-2 counter" data-target="5000">0</div>
-    <div class="text-gray-700 uppercase font-bold text-sm">Ahli Belia</div>
-</div>
 
     <script src="js/script.js"></script>
 </body>
