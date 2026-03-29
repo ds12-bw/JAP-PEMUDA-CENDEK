@@ -3,160 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hab Ilmu | Jaringan Pemuda untuk Pengembangan Cendek</title>
+    <title>Hab Ilmu | JP CENDEK</title>
+    
+    <!-- Framework & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        h1, h2, h3, .font-heading { font-family: 'Montserrat', sans-serif; }
+        
         .bg-ngo-green { background-color: #166534; }
-        .text-ngo-green { color: #166534; }
         .bg-ngo-yellow { background-color: #facc15; }
+        .text-ngo-green { color: #166534; }
         .text-ngo-yellow { color: #facc15; }
         .border-ngo-yellow { border-color: #facc15; }
-        .resource-card:hover { border-color: #facc15; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+
+        /* Resource Card Effects */
+        .resource-card { transition: all 0.4s ease; border-radius: 2rem; }
+        .resource-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(22, 101, 52, 0.1); border-color: #facc15; }
+        
+        /* Premium Search Bar */
+        .search-focus:focus { ring: 3px; ring-color: #facc15; border-color: #166534; }
     </style>
-      <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
 </head>
 <body class="bg-gray-50 text-gray-900">
 
-    <!-- 1. NAVIGATION BAR (Standardized for Balance) -->
-<nav class="bg-white sticky top-0 z-[100] border-b-4 border-ngo-yellow shadow-md">
-    <div class="container mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
-        
-        <!-- ส่วนซ้าย: Logo (JP CENDEK) -->
-        <a href="index.html" class="flex items-center group">
-            <div class="w-10 h-10 md:w-12 md:h-12 bg-ngo-green rounded-lg flex items-center justify-center text-white font-black text-xl shadow-lg rotate-2 transition-transform group-hover:rotate-0">JP</div>
-            <div class="ml-3 flex flex-col">
-                <span class="text-xl md:text-2xl font-900 text-ngo-green leading-none uppercase tracking-tighter">CENDEK</span>
-                <span class="text-[8px] md:text-[9px] font-bold text-ngo-yellow uppercase tracking-widest bg-ngo-green px-1 mt-1 inline-block">Jaringan Pemuda</span>
-            </div>
-        </a>
-
-        <!-- 1. BAHAGIAN NAVIGASI (The Gateway) -->
+    <!-- 1. BAHAGIAN NAVIGASI (Identical to index.html) -->
     <nav class="bg-white sticky top-0 z-[100] border-b-4 border-ngo-yellow shadow-md">
         <div class="container mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
-      
-            <!-- Logo JP CENDEK (เวอร์ชันไฟล์รูปภาพ) -->
-<a href="index.html" class="flex items-center group">
-    <!-- ปรับความสูง h-12 (มือถือ) และ md:h-16 (คอมพิวเตอร์) ตามความเหมาะสมของโลโก้คุณ -->
-    <img src="images/jap.png" 
-         alt="Logo JP CENDEK" 
-         class="h-14 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
-    
-    <!-- ถ้าโลโก้มีแต่รูปสัญลักษณ์ (Symbol) และต้องการคงชื่อข้อความไว้ด้านข้าง ให้คงส่วนนี้ไว้ -->
-    <!-- แต่ถ้าโลโก้มีชื่อในตัวอยู่แล้ว ให้ลบ div ด้านล่างนี้ออกได้เลยครับ -->
-    <div class="hidden sm:flex flex-col ml-3">
-        <span class="text-xl md:text-2xl font-900 text-ngo-green leading-none tracking-tighter uppercase">JAP</span>
-        <span class="text-[7px] font-bold text-ngo-yellow uppercase tracking-widest bg-ngo-green px-1 mt-1">Jaringan Pemuda untuk pengembangan cendek</span>
-    </div>
-</a>
-
-            <!-- Menu Utama -->
+            <a href="index.html" class="flex items-center group">
+                <img src="images/jap.png" alt="Logo JP CENDEK" class="h-14 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                <div class="hidden sm:flex flex-col ml-3">
+                    <span class="text-xl md:text-2xl font-900 text-ngo-green leading-none tracking-tighter uppercase">JAP</span>
+                    <span class="text-[7px] font-bold text-ngo-yellow uppercase tracking-widest bg-ngo-green px-1 mt-1">Jaringan Pemuda untuk pengembangan cendek</span>
+                </div>
+            </a>
             <div class="hidden lg:flex space-x-8 text-[11px] font-800 uppercase tracking-widest text-gray-500">
+                <a href="index.html" class="hover:text-ngo-green transition">Laman Utama</a>
                 <a href="about.html" class="hover:text-ngo-green transition">Mengenai Kami</a>
                 <a href="programs.html" class="hover:text-ngo-green transition">Program</a>
-                <a href="resources.html" class="hover:text-ngo-green transition">Hab Ilmu</a>
-                <a href="#jaringan" class="hover:text-ngo-green transition">Jaringan</a>
+                <a href="resources.html" class="text-ngo-green border-b-2 border-ngo-green pb-1">Hab Ilmu</a>
             </div>
-
-            <!-- Dual-CTA (Conversion) -->
             <div class="hidden md:flex items-center space-x-2">
                 <a href="#" class="bg-ngo-green text-white px-5 py-2.5 rounded font-bold text-[10px] uppercase tracking-wider hover:bg-green-800 transition shadow-sm">Jom Jadi Ahli</a>
                 <a href="#" class="bg-ngo-yellow text-green-900 px-5 py-2.5 rounded font-bold text-[10px] uppercase tracking-wider hover:bg-yellow-400 transition shadow-sm">Infaq & Dana</a>
             </div>
-
             <button id="menu-btn" class="lg:hidden text-ngo-green text-3xl">☰</button>
         </div>
     </nav>
 
-    <!-- Header Hab Ilmu -->
-    <header class="bg-white py-16 border-b">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-5xl font-800 text-ngo-green mb-4">Hab Ilmu & Sumber</h1>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Pusat rujukan intelektual bagi pemerkasaan belia, hasil penyelidikan, dan panduan praktikal untuk pembangunan masyarakat.</p>
+    <!-- 2. HERO SECTION (Consistent Faded Style) -->
+    <header class="relative bg-ngo-green text-white pt-24 pb-40 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="images/team/himpuntadika.jpg" alt="Background" class="w-full h-full object-cover opacity-20 filter grayscale">
+            <div class="absolute inset-0 bg-gradient-to-b from-ngo-green/90 via-ngo-green/80 to-ngo-green/90"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <span class="text-ngo-yellow font-900 text-xs uppercase tracking-[0.5em] mb-4 block">Pusat Rujukan Intelektual</span>
+            <h1 class="text-5xl md:text-7xl font-900 mb-6 leading-tight uppercase tracking-tighter">
+                Hab <span class="text-ngo-yellow">Ilmu</span>
+            </h1>
+            <p class="text-lg md:text-xl text-green-50 max-w-2xl mx-auto opacity-80 font-medium italic">
+                "Gedung perkongsian ilmu, hasil penyelidikan และ kompilasi pemikiran pemuda cendekia."
+            </p>
         </div>
     </header>
 
-    <!-- Penapis (Filters) - Membantu pencarian -->
-    <section class="py-8 bg-white sticky top-[80px] z-40 border-b">
-        <div class="container mx-auto px-6 flex flex-wrap justify-center gap-4">
-            <button class="px-6 py-2 bg-ngo-green text-white rounded-full font-bold text-sm shadow-md">Semua</button>
-            <button class="px-6 py-2 bg-white text-gray-600 border hover:border-ngo-green rounded-full font-bold text-sm transition">Penyelidikan</button>
-            <button class="px-6 py-2 bg-white text-gray-600 border hover:border-ngo-green rounded-full font-bold text-sm transition">E-Buku & Panduan</button>
-            <button class="px-6 py-2 bg-white text-gray-600 border hover:border-ngo-green rounded-full font-bold text-sm transition">Artikel</button>
-        </div>
-    </section>
-
-    <!-- Senarai Sumber (Resources List) -->
-    <section class="py-16">
+    <!-- 3. SEARCH & FILTER (The Intellectual Gateway) -->
+    <section class="py-12 bg-white border-b relative z-30 -mt-10">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Sumber 1: Penyelidikan -->
-                <div class="bg-white p-6 rounded-2xl border-2 border-transparent resource-card transition-all duration-300">
-                    <div class="bg-green-100 text-ngo-green text-[10px] font-900 tracking-widest uppercase py-1 px-3 rounded-full inline-block mb-4">Penyelidikan</div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Impak Ekonomi Digital Terhadap Belia Luar Bandar 2024</h3>
-                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">Analisis mendalam mengenai peluang dan cabaran ekonomi digital bagi belia di kawasan pedalaman Nusantara.</p>
-                    <div class="flex items-center justify-between mt-auto">
-                        <span class="text-xs text-gray-400">PDF • 4.5 MB</span>
-                        <a href="#" class="text-ngo-green font-bold flex items-center hover:text-ngo-yellow transition">Muat Turun <span class="ml-1">↓</span></a>
-                    </div>
+            <div class="max-w-4xl mx-auto bg-white p-4 rounded-[2rem] shadow-xl border border-gray-100 flex flex-col md:flex-row gap-4">
+                <!-- Search Input -->
+                <div class="flex-grow relative">
+                    <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">🔍</span>
+                    <input type="text" placeholder="Cari tajuk penyelidikan atau artikel..." class="w-full pl-12 pr-4 py-3 rounded-2xl bg-gray-50 border-transparent focus:bg-white focus:ring-4 focus:ring-ngo-yellow/20 focus:border-ngo-green transition duration-300 outline-none">
                 </div>
-
-                <!-- Sumber 2: E-Buku -->
-                <div class="bg-white p-6 rounded-2xl border-2 border-transparent resource-card transition-all duration-300">
-                    <div class="bg-yellow-100 text-yellow-700 text-[10px] font-900 tracking-widest uppercase py-1 px-3 rounded-full inline-block mb-4">E-Buku & Panduan</div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Manual Kepimpinan Intelektual Belia</h3>
-                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">Panduan langkah demi langkah untuk membina organisasi belia yang berasaskan ilmu dan integriti.</p>
-                    <div class="flex items-center justify-between mt-auto">
-                        <span class="text-xs text-gray-400">E-PUB • 2.1 MB</span>
-                        <a href="#" class="text-ngo-green font-bold flex items-center hover:text-ngo-yellow transition">Muat Turun <span class="ml-1">↓</span></a>
-                    </div>
-                </div>
-
-                <!-- Sumber 3: Artikel -->
-                <div class="bg-white p-6 rounded-2xl border-2 border-transparent resource-card transition-all duration-300">
-                    <div class="bg-blue-100 text-blue-700 text-[10px] font-900 tracking-widest uppercase py-1 px-3 rounded-full inline-block mb-4">Artikel</div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Masa Depan Pendidikan: Peranan AI dalam Pembelajaran</h3>
-                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">Bagaimana kecerdasan buatan dapat membantu mempercepatkan pengembangan cendekia di kalangan mahasiswa.</p>
-                    <div class="flex items-center justify-between mt-auto">
-                        <span class="text-xs text-gray-400">5 Minit Bacaan</span>
-                        <a href="#" class="text-ngo-green font-bold flex items-center hover:text-ngo-yellow transition">Baca Lanjut <span class="ml-1">→</span></a>
-                    </div>
-                </div>
-
-                <!-- Tambah lebih banyak sumber di bawah -->
-            </div>
-
-            <!-- Pagination (Navigasi Halaman) -->
-            <div class="flex justify-center mt-16 space-x-2">
-                <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-ngo-green text-white font-bold shadow-md">1</button>
-                <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white border border-gray-200 hover:border-ngo-green text-gray-600 transition">2</button>
-                <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white border border-gray-200 hover:border-ngo-green text-gray-600 transition">3</button>
+                <!-- Category Filter -->
+                <select class="px-6 py-3 rounded-2xl bg-gray-50 border-transparent font-bold text-xs uppercase tracking-widest text-gray-500 outline-none focus:bg-white">
+                    <option>Semua Kategori</option>
+                    <option>Penyelidikan</option>
+                    <option>E-Buku</option>
+                    <option>Kertas Kerja</option>
+                </select>
+                <button class="bg-ngo-green text-white px-8 py-3 rounded-2xl font-bold uppercase tracking-widest text-xs hover:bg-green-800 transition shadow-lg">Cari</button>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter (Langganan Ilmu) -->
-    <section class="bg-ngo-green py-20 relative overflow-hidden">
-        <div class="absolute bottom-0 left-0 w-48 h-48 bg-ngo-yellow opacity-20 rounded-full -ml-24 -mb-24"></div>
-        <div class="container mx-auto px-6 text-center relative z-10">
-            <h2 class="text-3xl font-bold text-white mb-4">Dapatkan Kemas Kini Ilmu</h2>
-            <p class="text-green-100 mb-8 max-w-xl mx-auto">Sertai buletin kami untuk menerima hasil penyelidikan dan artikel terkini terus ke emel anda.</p>
+    <!-- 4. RESOURCES LISTING (The Knowledge Hub) -->
+    <section class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <!-- Resource Card 1: Research -->
+                <div class="resource-card bg-white p-8 border border-gray-100 shadow-sm flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="bg-green-100 text-ngo-green text-[10px] font-900 px-3 py-1.5 rounded-lg uppercase tracking-widest">Penyelidikan</div>
+                        <span class="text-xs text-gray-400 font-bold uppercase">2024</span>
+                    </div>
+                    <h3 class="text-xl font-800 text-ngo-green mb-4 leading-snug">Potensi Ekonomi Madani Dalam Pemerkasaan Belia Luar Bandar</h3>
+                    <p class="text-gray-500 text-sm mb-8 leading-relaxed">Kajian mendalam mengenai strategi memperkukuh ekonomi belia di kawasan pedalaman melalui integrasi teknologi.</p>
+                    <div class="mt-auto pt-6 border-t border-gray-50 flex items-center justify-between">
+                        <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">PDF • 4.2 MB</span>
+                        <a href="#" class="bg-ngo-yellow text-green-900 p-3 rounded-xl hover:bg-green-900 hover:text-white transition shadow-md">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Resource Card 2: E-Book -->
+                <div class="resource-card bg-white p-8 border border-gray-100 shadow-sm flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="bg-yellow-100 text-yellow-700 text-[10px] font-900 px-3 py-1.5 rounded-lg uppercase tracking-widest">E-Buku</div>
+                        <span class="text-xs text-gray-400 font-bold uppercase">Manual</span>
+                    </div>
+                    <h3 class="text-xl font-800 text-ngo-green mb-4 leading-snug">Manual Kepimpinan Cendek: Modul Asas Organisasi</h3>
+                    <p class="text-gray-500 text-sm mb-8 leading-relaxed">Garis panduan komprehensif untuk pengurusan persatuan belia berteraskan nilai integriti และ intelek.</p>
+                    <div class="mt-auto pt-6 border-t border-gray-50 flex items-center justify-between">
+                        <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">EPUB • 2.8 MB</span>
+                        <a href="#" class="bg-ngo-yellow text-green-900 p-3 rounded-xl hover:bg-green-900 hover:text-white transition shadow-md">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Resource Card 3: Article -->
+                <div class="resource-card bg-white p-8 border border-gray-100 shadow-sm flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="bg-blue-100 text-blue-700 text-[10px] font-900 px-3 py-1.5 rounded-lg uppercase tracking-widest">Artikel</div>
+                        <span class="text-xs text-gray-400 font-bold uppercase">Insights</span>
+                    </div>
+                    <h3 class="text-xl font-800 text-ngo-green mb-4 leading-snug">Peranan Kecerdasan Buatan (AI) Dalam Pendidikan Islam</h3>
+                    <p class="text-gray-500 text-sm mb-8 leading-relaxed">Ulasan mengenai bagaimana teknologi AI boleh dimanfaatkan untuk meningkatkan kualiti pembelajaran agama.</p>
+                    <div class="mt-auto pt-6 border-t border-gray-50 flex items-center justify-between">
+                        <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">5 Minit Bacaan</span>
+                        <a href="#" class="bg-ngo-yellow text-green-900 px-6 py-2.5 rounded-xl font-bold text-[10px] uppercase tracking-widest hover:bg-green-900 hover:text-white transition">Baca Online</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Pagination (The Next Generation Navigation) -->
+            <div class="flex justify-center mt-20 space-x-2">
+                <button class="w-12 h-12 bg-ngo-green text-white rounded-xl font-bold shadow-lg">1</button>
+                <button class="w-12 h-12 bg-white text-gray-400 rounded-xl font-bold border border-gray-100 hover:bg-ngo-yellow hover:text-green-900 transition">2</button>
+                <button class="w-12 h-12 bg-white text-gray-400 rounded-xl font-bold border border-gray-100 hover:bg-ngo-yellow hover:text-green-900 transition">3</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. NEWSLETTER (Keep Them Updated) -->
+    <section class="py-24 bg-ngo-green text-white relative overflow-hidden">
+        <div class="absolute left-0 top-0 opacity-10 transform -translate-x-10 -translate-y-10">
+            <img src="images/jap.png" class="w-80">
+        </div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h2 class="text-4xl font-900 text-ngo-yellow mb-6 uppercase tracking-tighter">Dapatkan Kemas Kini Ilmu</h2>
+            <p class="text-green-100 mb-10 max-w-xl mx-auto font-medium">Sertai buletin kamiเพื่อรับงานวิจัยและบทความล่าสุดส่งตรงถึงอีเมลของคุณ</p>
             <form class="max-w-md mx-auto flex flex-col md:flex-row gap-4">
-                <input type="email" placeholder="Alamat Emel Anda" class="flex-grow px-6 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-ngo-yellow">
-                <button type="submit" class="bg-ngo-yellow text-green-900 px-8 py-3 rounded-full font-bold hover:bg-yellow-400 transition">Langgan</button>
+                <input type="email" placeholder="Alamat Emel Anda" class="flex-grow px-6 py-4 rounded-2xl bg-white/10 border border-white/20 focus:bg-white focus:text-gray-900 outline-none transition duration-300">
+                <button type="submit" class="bg-ngo-yellow text-green-900 px-8 py-4 rounded-2xl font-bold uppercase tracking-widest text-xs hover:bg-white transition shadow-xl">Langgan</button>
             </form>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-white py-12 border-t">
+    <!-- 6. FOOTER (Balanced with index.html) -->
+    <footer class="bg-white pt-24 pb-12">
         <div class="container mx-auto px-6 text-center">
-            <div class="text-2xl font-800 text-ngo-green mb-2">JP CENDEK</div>
-            <p class="text-gray-400 text-xs">&copy; 2024 Jaringan Pemuda untuk Pengembangan Cendek. Hab Ilmu untuk Kemajuan Bangsa.</p>
+            <div class="flex items-center justify-center space-x-3 mb-10">
+                <div class="w-10 h-10 bg-ngo-green text-white rounded-lg flex items-center justify-center font-black">JP</div>
+                <span class="text-2xl font-900 tracking-tighter text-ngo-green uppercase">JP CENDEK</span>
+            </div>
+            <p class="text-gray-400 text-[10px] font-bold tracking-[0.4em] uppercase">
+                &copy; 2024 Jaringan Pemuda untuk Pengembangan Cendek. Hab Ilmu สำหรับอนาคต.
+            </p>
         </div>
     </footer>
 
