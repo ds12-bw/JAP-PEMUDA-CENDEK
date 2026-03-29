@@ -21,32 +21,51 @@
 </head>
 <body class="bg-gray-50 text-gray-900">
 
-    <!-- คัดลอกไปทับส่วน nav เดิมในทุกหน้า -->
-<nav class="bg-white sticky top-0 z-50 border-b-4 border-ngo-yellow">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <div class="text-2xl font-800 text-ngo-green tracking-tighter">
-            <span class="bg-ngo-green text-white px-2 py-1 rounded mr-2">JP</span> CENDEK
-        </div>
+   <!-- 1. NAVIGATION BAR (Standardized for Balance) -->
+<nav class="bg-white sticky top-0 z-[100] border-b-4 border-ngo-yellow shadow-md">
+    <div class="container mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
         
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex space-x-8 font-semibold">
-            <a href="index.html" class="hover:text-ngo-green">Laman Utama</a>
-            <a href="about.html" class="hover:text-ngo-green">Mengenai Kami</a>
-            <a href="programs.html" class="hover:text-ngo-green">Program</a>
-            <a href="resources.html" class="hover:text-ngo-green">Hab Ilmu</a>
-        </div>
+        <!-- ส่วนซ้าย: Logo (JP CENDEK) -->
+        <a href="index.html" class="flex items-center group">
+            <div class="w-10 h-10 md:w-12 md:h-12 bg-ngo-green rounded-lg flex items-center justify-center text-white font-black text-xl shadow-lg rotate-2 transition-transform group-hover:rotate-0">JP</div>
+            <div class="ml-3 flex flex-col">
+                <span class="text-xl md:text-2xl font-900 text-ngo-green leading-none uppercase tracking-tighter">CENDEK</span>
+                <span class="text-[8px] md:text-[9px] font-bold text-ngo-yellow uppercase tracking-widest bg-ngo-green px-1 mt-1 inline-block">Jaringan Pemuda</span>
+            </div>
+        </a>
 
-        <!-- Mobile Menu Button (เพิ่มตรงนี้) -->
-        <button id="menu-btn" class="md:hidden text-ngo-green text-3xl">☰</button>
+        <!-- ส่วนขวา: Menu Links & CTA Buttons (รวมกลุ่มกันเพื่อความสมดุล) -->
+        <div class="flex items-center space-x-4 lg:space-x-10">
+            
+            <!-- Desktop Menu Links -->
+            <div class="hidden lg:flex space-x-8 text-[11px] font-800 uppercase tracking-widest text-gray-400">
+                <a href="index.html" class="hover:text-ngo-green transition">Laman Utama</a>
+                <a href="about.html" class="hover:text-ngo-green transition active-link">Mengenai Kami</a>
+                <a href="programs.html" class="hover:text-ngo-green transition">Program</a>
+                <a href="resources.html" class="hover:text-ngo-green transition">Hab Ilmu</a>
+            </div>
+
+            <!-- CTA Buttons (ปุ่มคู่แบบ ABIM) -->
+            <div class="hidden md:flex items-center space-x-2 border-l pl-6 border-gray-100">
+                <a href="#" class="bg-ngo-green text-white px-5 py-2.5 rounded-lg font-bold text-[10px] uppercase tracking-wider hover:bg-green-800 transition shadow-sm">Jom Jadi Ahli</a>
+                <a href="#" class="bg-ngo-yellow text-green-900 px-5 py-2.5 rounded-lg font-bold text-[10px] uppercase tracking-wider hover:bg-yellow-400 transition shadow-sm">Infaq & Dana</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="lg:hidden text-ngo-green text-3xl focus:outline-none">☰</button>
+        </div>
     </div>
 
-    <!-- Mobile Menu Link (เพิ่มตรงนี้) -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t p-6 space-y-4 font-semibold">
-        <a href="index.html" class="block text-ngo-green">Laman Utama</a>
-        <a href="about.html" class="block">Mengenai Kami</a>
-        <a href="programs.html" class="block">Program</a>
-        <a href="resources.html" class="block">Hab Ilmu</a>
-        <a href="contact.html" class="block bg-ngo-yellow text-center p-2 rounded-full">Sertai Kami</a>
+    <!-- Mobile Menu Drawer (จะแสดงเมื่อกดปุ่มบนมือถือ) -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t p-6 flex flex-col space-y-4 font-bold text-sm uppercase">
+        <a href="index.html" class="text-gray-500">Laman Utama</a>
+        <a href="about.html" class="text-ngo-green">Mengenai Kami</a>
+        <a href="programs.html" class="text-gray-500">Program</a>
+        <a href="resources.html" class="text-gray-500">Hab Ilmu</a>
+        <div class="flex flex-col gap-2 pt-4 border-t">
+            <a href="#" class="bg-ngo-green text-white p-3 rounded-lg text-center text-xs">Jom Jadi Ahli</a>
+            <a href="#" class="bg-ngo-yellow text-green-900 p-3 rounded-lg text-center text-xs">Infaq & Dana</a>
+        </div>
     </div>
 </nav>
 
